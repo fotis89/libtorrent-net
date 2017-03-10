@@ -41,14 +41,14 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CLRSupport>true</CLRSupport>
@@ -74,25 +74,33 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Libs\boost_1_58_0;C:\Libs\libtorrent\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Libs\boost_1_58_0\stage\lib;C:\Libs\libtorrent\bin\msvc-14.0\debug\boost-source\deprecated-functions-off\link-static\threading-multi;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\libtorrent-rasterbar-1.0.10\include;C:\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\boost-source\link-static\resolve-countries-off\threading-multi\src;C:\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\libtorrent-rasterbar-1.0.10\include;C:\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\boost-source\link-static\resolve-countries-off\threading-multi\src;C:\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Libs\boost_1_58_0;C:\Libs\libtorrent\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Libs\boost_1_58_0\stage\lib;C:\Libs\libtorrent\bin\msvc-14.0\release\boost-source\deprecated-functions-off\link-static\threading-multi;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\libtorrent-rasterbar-1.0.10\include;C:\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\boost-source\link-static\resolve-countries-off\threading-multi\src;C:\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\libtorrent-rasterbar-1.0.10\include;C:\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\boost-source\link-static\resolve-countries-off\threading-multi\src;C:\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;TORRENT_NO_DEPRECATE;WIN32;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0600;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;TORRENT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -103,31 +111,33 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;TORRENT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies />
+      <AdditionalDependencies>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\debug\address-model-64\architecture-x86\boost-source\link-static\resolve-countries-off\threading-multi\libtorrent.lib;C:\boost_1_62_0\stage\lib\libboost_system-vc140-mt-1_62.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;TORRENT_NO_DEPRECATE;WIN32;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0600;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libtorrent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\architecture-x86\boost-source\link-static\resolve-countries-off\threading-multi\libtorrent.lib;C:\boost_1_62_0\stage\lib\libboost_system-vc140-mt-1_62.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\boost_1_62_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies />
+      <AdditionalDependencies>C:\libtorrent-rasterbar-1.0.10\bin\msvc-14.0\release\address-model-64\architecture-x86\boost-source\link-static\resolve-countries-off\threading-multi\libtorrent.lib;C:\boost_1_62_0\stage\lib\libboost_system-vc140-mt-1_62.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
 #include "announce_entry.h"
 #include "interop.h"
 #include "sha1_hash.h"
+#include "file_entry.h"
 
 using namespace lt;
 
@@ -78,6 +79,11 @@ sha1_hash^ torrent_info::info_hash()
 int torrent_info::num_files()
 {
     return info_->num_files();
+}
+
+file_entry^ torrent_info::file_at(int index)
+{
+	return gcnew file_entry(info_->file_at(index));
 }
 
 System::String^ torrent_info::ssl_cert()

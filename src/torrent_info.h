@@ -9,6 +9,7 @@ namespace lt
 {
     ref class announce_entry;
     ref class sha1_hash;
+	ref class file_entry;
 
     public ref class torrent_info
     {
@@ -32,7 +33,7 @@ namespace lt
         int piece_length();
         sha1_hash^ info_hash();
         int num_files();
-        // TODO file_at
+		file_entry^ torrent_info::file_at(int index);
         // TODO map block
         System::String^ ssl_cert();
         bool is_valid();
