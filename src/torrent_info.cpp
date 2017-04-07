@@ -1,6 +1,8 @@
 #include "torrent_info.h"
 
 #include <libtorrent/torrent_info.hpp>
+#include <libtorrent/announce_entry.hpp>
+
 #include <msclr/marshal_cppstd.h>
 
 #include "announce_entry.h"

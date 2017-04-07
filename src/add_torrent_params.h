@@ -1,4 +1,5 @@
 #pragma once
+#pragma comment(lib, "Iphlpapi.lib")
 
 namespace libtorrent
 {

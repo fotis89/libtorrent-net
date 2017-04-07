@@ -2,6 +2,8 @@
 
 #include <libtorrent/peer_info.hpp>
 #include <libtorrent/torrent_handle.hpp>
+#include <libtorrent/torrent_status.hpp>
+#include <libtorrent/announce_entry.hpp>
 
 #include "announce_entry.h"
 #include "interop.h"
@@ -86,7 +88,7 @@ void torrent_handle::set_priority(int priority)
 
 cli::array<long long>^ torrent_handle::file_progress(int flags)
 {
-    std::vector<libtorrent::size_type> progress;
+    std::vector<boost::int64_t> progress;
     handle_->file_progress(progress, flags);
 
     cli::array<long long>^ result = gcnew cli::array<long long>(progress.size());

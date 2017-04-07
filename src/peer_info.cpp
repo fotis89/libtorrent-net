@@ -74,12 +74,6 @@ System::String^ peer_info::country::get()
     return interop::from_std_string(std::string(info_->country, 2));
 }
 
-System::String^ peer_info::inet_as_name::get()
-{
-    return interop::from_std_string(info_->inet_as_name);
-}
-
-PEER_INT_PROP(inet_as);
 PEER_INT_PROP(download_queue_length);
 PEER_INT_PROP(timed_out_requests);
 PEER_INT_PROP(busy_requests);

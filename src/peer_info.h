@@ -41,8 +41,6 @@ namespace lt
         property int used_receive_buffer { int get(); }
         property int num_hashfails { int get(); }
         property System::String^ country { System::String^ get(); }
-        property System::String^ inet_as_name { System::String^ get(); }
-        property int inet_as { int get(); }
         property int download_queue_length { int get(); }
         property int timed_out_requests { int get(); }
         property int busy_requests { int get(); }

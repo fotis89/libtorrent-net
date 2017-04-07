@@ -74,7 +74,6 @@ namespace lt
         property int seeding_time { int get(); }
         property int seed_rank { int get(); }
         property int last_scrape { int get(); }
-        property int sparse_regions { int get(); }
         property int priority { int get(); }
         // TODO state
         property bool need_save_resume { bool get(); }

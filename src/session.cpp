@@ -1,6 +1,7 @@
 #include "session.h"
 
 #include <libtorrent/session.hpp>
+#include <libtorrent/session_status.hpp>
 
 #include "alert.h"
 #include "add_torrent_params.h"

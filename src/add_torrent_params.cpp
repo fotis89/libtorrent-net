@@ -3,7 +3,7 @@
 #include <libtorrent/add_torrent_params.hpp>
 #include <libtorrent/torrent_info.hpp>
 #include <msclr/marshal_cppstd.h>
-
+#include <boost/make_shared.hpp>
 #include "interop.h"
 #include "torrent_info.h"
 
@@ -51,7 +51,7 @@ torrent_info^ add_torrent_params::ti::get()
 
 void add_torrent_params::ti::set(torrent_info^ value)
 {
-    params_->ti = new libtorrent::torrent_info(*value->ptr());
+    params_->ti = boost::make_shared<libtorrent::torrent_info>(*value->ptr());
 }
 
 libtorrent::add_torrent_params* add_torrent_params::ptr()

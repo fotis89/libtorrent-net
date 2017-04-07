@@ -1,6 +1,9 @@
 #include "announce_entry.h"
 
+#include <libtorrent/announce_entry.hpp>
 #include <libtorrent/torrent_info.hpp>
+
+#include <chrono>
 
 #include "interop.h"
 
@@ -41,11 +44,21 @@ void announce_entry::reset()
     entry_->reset();
 }
 
+using ticks = std::chrono::duration<std::int64_t,
+	std::ratio_multiply<std::ratio<100>, std::nano>>;
+
+std::chrono::system_clock::time_point
+ConvertDateTime(System::DateTime dateTime)
+{
+	using namespace std::chrono;
+	return system_clock::time_point{ ticks{ dateTime.Ticks - 22089888000000000 } };
+}
+
 bool announce_entry::can_announce(System::DateTime now, bool is_seed)
 {
     System::DateTime unix(1970, 1, 1);
-    int totalSeconds = (now - unix.ToLocalTime()).TotalSeconds;
-    return entry_->can_announce(libtorrent::ptime(totalSeconds), is_seed); // TODO: investigate ptime
+    long totalSeconds = (now - unix.ToLocalTime()).TotalSeconds;
+    return entry_->can_announce(std::chrono::high_resolution_clock::now(), is_seed); // TODO: investigate ptime
 }
 
 bool announce_entry::is_working()

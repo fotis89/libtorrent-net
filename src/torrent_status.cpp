@@ -1,6 +1,9 @@
 #include "torrent_status.h"
 
 #include <libtorrent/torrent_handle.hpp>
+#include <libtorrent/torrent_status.hpp>
+
+#include <chrono>
 
 #include "interop.h"
 
@@ -33,12 +36,18 @@ System::String^ torrent_status::name::get()
 
 System::TimeSpan torrent_status::next_announce::get()
 {
-    return System::TimeSpan(0, 0, status_->next_announce.total_seconds());
+	typedef std::chrono::duration<float> fsec;
+	typedef std::chrono::seconds s;
+	fsec fs = status_->next_announce;
+    return System::TimeSpan(0, 0, std::chrono::duration_cast<s>(fs).count());
 }
 
 System::TimeSpan torrent_status::announce_interval::get()
 {
-    return System::TimeSpan(0, 0, status_->announce_interval.total_seconds());
+	typedef std::chrono::duration<float> fsec;
+	typedef std::chrono::seconds s;
+	fsec fs = status_->announce_interval;
+    return System::TimeSpan(0, 0, std::chrono::duration_cast<s>(fs).count());
 }
 
 System::String^ torrent_status::current_tracker::get()
@@ -274,11 +283,6 @@ int torrent_status::seed_rank::get()
 int torrent_status::last_scrape::get()
 {
     return status_->last_scrape;
-}
-
-int torrent_status::sparse_regions::get()
-{
-    return status_->sparse_regions;
 }
 
 int torrent_status::priority::get()
