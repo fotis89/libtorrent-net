@@ -13,3 +13,7 @@ Compile libtorrent using "bjam link=static variant=release boost-link=static arc
 3/ Ltnet
 Open solution, set Release/x86, build.
 ```
+
+# Usage
+
+* Include the library as a reference to any .NET project and simply use the libtorrent API.
