@@ -7,7 +7,7 @@ Go to C:\boost_1_64_0 and execute "bootstrap.bat", then ".\b2 --toolset=msvc-14.
 Add BOOST_ROOT (C:\boost_1_64_0), BOOST_BUILD_PATH (C:\boost_1_64_0\tools\build) to Environment path and C:\boost_1_64_0 to Path
 
 2/ Libtorrent
-Download and extract libtorrent-rasterbar to C:\libtorrent-libtorrent-1_1_3
+Download and extract libtorrent-rasterbar to C:\libtorrent-rasterbar-1.1.3
 Compile libtorrent using "bjam link=static variant=release boost-link=static architecture=x86"
 
 3/ Ltnet
