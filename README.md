@@ -1,6 +1,8 @@
 ```
 **BUILDING LTNET**
 
+Download and install Microsoft Visual Studio 2017 for Windows 10, including SDK 10.1.15063 and C++ tools.
+
 1/ BOOST
 Download and extract Boost 1.64 to C:\boost_1_64_0
 Go to C:\boost_1_64_0 and execute "bootstrap.bat", then ".\b2 --toolset=msvc-14.1 architecture=x86"
