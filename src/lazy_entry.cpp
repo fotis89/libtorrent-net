@@ -12,7 +12,12 @@ lazy_entry::lazy_entry(libtorrent::lazy_entry& e)
 
 lazy_entry::~lazy_entry()
 {
-    delete entry_;
+	this->!lazy_entry();
+}
+
+lazy_entry::!lazy_entry()
+{
+	delete entry_;
 }
 
 libtorrent::lazy_entry* lazy_entry::ptr()

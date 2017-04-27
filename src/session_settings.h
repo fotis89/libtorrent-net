@@ -18,6 +18,7 @@ namespace lt
 
     public:
         ~session_settings();
+		!session_settings();
 
         SS_PROP(int, version);
         SS_PROP(System::String^, user_agent);

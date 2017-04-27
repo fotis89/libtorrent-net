@@ -16,6 +16,7 @@ namespace lt
     public:
         announce_entry(System::String^ url);
         ~announce_entry();
+		!announce_entry();
 
         int next_announce_in();
         int min_announce_in();

@@ -23,7 +23,12 @@ session_settings::session_settings(libtorrent::session_settings& settings)
 
 session_settings::~session_settings()
 {
-    delete settings_;
+	this->!session_settings();
+}
+
+session_settings::!session_settings()
+{
+	delete settings_;
 }
 
 libtorrent::session_settings& session_settings::ptr()

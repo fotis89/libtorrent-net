@@ -15,6 +15,7 @@ namespace lt
 
     public:
         ~entry();
+		!entry();
 
     private:
         libtorrent::entry* entry_;

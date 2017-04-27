@@ -21,7 +21,12 @@ dht_settings::dht_settings(libtorrent::dht_settings& settings)
 
 dht_settings::~dht_settings()
 {
-    delete settings_;
+	this->!dht_settings();
+}
+
+dht_settings::!dht_settings()
+{
+	delete settings_;
 }
 
 libtorrent::dht_settings& dht_settings::ptr()

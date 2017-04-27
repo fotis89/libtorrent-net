@@ -18,6 +18,7 @@ namespace lt
         torrent_info(System::String^ fileName);
 
         ~torrent_info();
+		!torrent_info();
 
         // TODO files
         // TODO orig_files

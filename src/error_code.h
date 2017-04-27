@@ -12,6 +12,7 @@ namespace lt
     public:
 		error_code();
         ~error_code();
+		!error_code();
 
         System::String^ message();
         int value();

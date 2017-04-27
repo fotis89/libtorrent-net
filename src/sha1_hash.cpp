@@ -21,7 +21,12 @@ sha1_hash::sha1_hash(System::String^ val)
 
 sha1_hash::~sha1_hash()
 {
-    delete hash_;
+	this->!sha1_hash();
+}
+
+sha1_hash::!sha1_hash()
+{
+	delete hash_;
 }
 
 libtorrent::sha1_hash& sha1_hash::ptr()

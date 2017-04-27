@@ -18,6 +18,7 @@ namespace lt
 
     public:
         ~dht_settings();
+		!dht_settings();
 
         DS_PROP(int, max_peers_reply);
         DS_PROP(int, search_branching);

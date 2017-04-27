@@ -25,8 +25,13 @@ session::session()
 
 session::~session()
 {
-    delete dispatcher_;
-    delete session_;
+	this->!session();
+}
+
+session::!session()
+{
+	delete dispatcher_;
+	delete session_;
 }
 
 void session::load_state(lazy_entry^ e)

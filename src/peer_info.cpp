@@ -19,7 +19,12 @@ peer_info::peer_info(libtorrent::peer_info& info)
 
 peer_info::~peer_info()
 {
-    delete info_;
+	this->!peer_info();
+}
+
+peer_info::!peer_info()
+{
+	delete info_;
 }
 
 unsigned int peer_info::flags::get()

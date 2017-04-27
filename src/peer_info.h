@@ -14,6 +14,7 @@ namespace lt
 
     public:
         ~peer_info();
+		!peer_info();
 
         property unsigned int flags { unsigned int get(); }
         property int source { int get(); }

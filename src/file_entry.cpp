@@ -23,7 +23,12 @@ file_entry::file_entry(const libtorrent::file_entry& entry)
 
 file_entry::~file_entry()
 {
-    delete entry_;
+	this->!file_entry();
+}
+
+file_entry::!file_entry()
+{
+	delete entry_;
 }
 
 libtorrent::file_entry& file_entry::ptr()

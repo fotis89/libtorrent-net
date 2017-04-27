@@ -17,6 +17,16 @@ torrent_alert::torrent_alert(libtorrent::torrent_alert* a)
     handle_ = gcnew torrent_handle(a->handle);
 }
 
+torrent_alert::~torrent_alert()
+{
+	this->!torrent_alert();
+}
+
+torrent_alert::!torrent_alert()
+{
+	delete handle_;
+}
+
 torrent_handle^ torrent_alert::handle::get()
 {
     return handle_;
@@ -28,6 +38,16 @@ peer_alert::peer_alert(libtorrent::peer_alert* a)
 {
 }
 
+peer_alert::~peer_alert()
+{
+	this->!peer_alert();
+}
+
+peer_alert::!peer_alert()
+{
+	delete alert_;
+}
+
 sha1_hash^ peer_alert::pid::get()
 {
     return gcnew sha1_hash(alert_->pid);
@@ -37,6 +57,16 @@ tracker_alert::tracker_alert(libtorrent::tracker_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+tracker_alert::~tracker_alert()
+{
+	this->!tracker_alert();
+}
+
+tracker_alert::!tracker_alert()
+{
+	delete alert_;
 }
 
 System::String^ tracker_alert::url::get()
@@ -61,6 +91,16 @@ read_piece_alert::read_piece_alert(libtorrent::read_piece_alert* a)
     // TODO set buffer
 }
 
+read_piece_alert::~read_piece_alert()
+{
+	this->!read_piece_alert();
+}
+
+read_piece_alert::!read_piece_alert()
+{
+	delete alert_;
+}
+
 cli::array<System::Byte>^ read_piece_alert::buffer::get()
 {
     throw gcnew System::NotImplementedException();
@@ -82,6 +122,16 @@ file_completed_alert::file_completed_alert(libtorrent::file_completed_alert* a)
 {
 }
 
+file_completed_alert::~file_completed_alert()
+{
+	this->!file_completed_alert();
+}
+
+file_completed_alert::!file_completed_alert()
+{
+	delete alert_;
+}
+
 int file_completed_alert::index::get()
 {
     return alert_->index;
@@ -91,6 +141,16 @@ file_renamed_alert::file_renamed_alert(libtorrent::file_renamed_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+file_renamed_alert::~file_renamed_alert()
+{
+	this->!file_renamed_alert();
+}
+
+file_renamed_alert::!file_renamed_alert()
+{
+	delete alert_;
 }
 
 System::String^ file_renamed_alert::name::get()
@@ -109,6 +169,16 @@ file_rename_failed_alert::file_rename_failed_alert(libtorrent::file_rename_faile
 {
 }
 
+file_rename_failed_alert::~file_rename_failed_alert()
+{
+	this->!file_rename_failed_alert();
+}
+
+file_rename_failed_alert::!file_rename_failed_alert()
+{
+	delete alert_;
+}
+
 int file_rename_failed_alert::index::get()
 {
     return alert_->index;
@@ -120,6 +190,16 @@ performance_alert::performance_alert(libtorrent::performance_alert* a)
 {
 }
 
+performance_alert::~performance_alert()
+{
+	this->!performance_alert();
+}
+
+performance_alert::!performance_alert()
+{
+	delete alert_;
+}
+
 int performance_alert::warning_code::get()
 {
     return (int)alert_->warning_code;
@@ -129,6 +209,16 @@ state_changed_alert::state_changed_alert(libtorrent::state_changed_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+state_changed_alert::~state_changed_alert()
+{
+	this->!state_changed_alert();
+}
+
+state_changed_alert::!state_changed_alert()
+{
+	delete alert_;
 }
 
 int state_changed_alert::state::get()
@@ -145,6 +235,16 @@ tracker_error_alert::tracker_error_alert(libtorrent::tracker_error_alert* a)
     : tracker_alert(a),
     alert_(a)
 {
+}
+
+tracker_error_alert::~tracker_error_alert()
+{
+	this->!tracker_error_alert();
+}
+
+tracker_error_alert::!tracker_error_alert()
+{
+	delete alert_;
 }
 
 int tracker_error_alert::times_in_row::get()
@@ -173,6 +273,17 @@ tracker_warning_alert::tracker_warning_alert(libtorrent::tracker_warning_alert* 
 {
 }
 
+tracker_warning_alert::~tracker_warning_alert()
+{
+	this->!tracker_warning_alert();
+}
+
+tracker_warning_alert::!tracker_warning_alert()
+{
+	delete alert_;
+}
+
+
 System::String^ tracker_warning_alert::msg::get()
 {
     return interop::from_std_string(alert_->msg);
@@ -182,6 +293,16 @@ scrape_reply_alert::scrape_reply_alert(libtorrent::scrape_reply_alert* a)
     : tracker_alert(a),
     alert_(a)
 {
+}
+
+scrape_reply_alert::~scrape_reply_alert()
+{
+	this->!scrape_reply_alert();
+}
+
+scrape_reply_alert::!scrape_reply_alert()
+{
+	delete alert_;
 }
 
 int scrape_reply_alert::incomplete::get()
@@ -200,6 +321,16 @@ scrape_failed_alert::scrape_failed_alert(libtorrent::scrape_failed_alert* a)
 {
 }
 
+scrape_failed_alert::~scrape_failed_alert()
+{
+	this->!scrape_failed_alert();
+}
+
+scrape_failed_alert::!scrape_failed_alert()
+{
+	delete alert_;
+}
+
 System::String^ scrape_failed_alert::msg::get()
 {
     return interop::from_std_string(alert_->msg);
@@ -209,6 +340,16 @@ tracker_reply_alert::tracker_reply_alert(libtorrent::tracker_reply_alert* a)
     : tracker_alert(a),
     alert_(a)
 {
+}
+
+tracker_reply_alert::~tracker_reply_alert()
+{
+	this->!tracker_reply_alert();
+}
+
+tracker_reply_alert::!tracker_reply_alert()
+{
+	delete alert_;
 }
 
 int tracker_reply_alert::num_peers::get()
@@ -222,6 +363,16 @@ dht_reply_alert::dht_reply_alert(libtorrent::dht_reply_alert* a)
 {
 }
 
+dht_reply_alert::~dht_reply_alert()
+{
+	this->!dht_reply_alert();
+}
+
+dht_reply_alert::!dht_reply_alert()
+{
+	delete alert_;
+}
+
 int dht_reply_alert::num_peers::get()
 {
     return alert_->num_peers;
@@ -233,6 +384,16 @@ tracker_announce_alert::tracker_announce_alert(libtorrent::tracker_announce_aler
 {
 }
 
+tracker_announce_alert::~tracker_announce_alert()
+{
+	this->!tracker_announce_alert();
+}
+
+tracker_announce_alert::!tracker_announce_alert()
+{
+	delete alert_;
+}
+
 int tracker_announce_alert::event::get()
 {
     return alert_->event;
@@ -242,6 +403,16 @@ hash_failed_alert::hash_failed_alert(libtorrent::hash_failed_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+hash_failed_alert::~hash_failed_alert()
+{
+	this->!hash_failed_alert();
+}
+
+hash_failed_alert::!hash_failed_alert()
+{
+	delete alert_;
 }
 
 int hash_failed_alert::piece_index::get()
@@ -270,6 +441,16 @@ peer_error_alert::peer_error_alert(libtorrent::peer_error_alert* a)
 {
 }
 
+peer_error_alert::~peer_error_alert()
+{
+	this->!peer_error_alert();
+}
+
+peer_error_alert::!peer_error_alert()
+{
+	delete alert_;
+}
+
 error_code^ peer_error_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -279,6 +460,16 @@ peer_connect_alert::peer_connect_alert(libtorrent::peer_connect_alert* a)
     : peer_alert(a),
     alert_(a)
 {
+}
+
+peer_connect_alert::~peer_connect_alert()
+{
+	this->!peer_connect_alert();
+}
+
+peer_connect_alert::!peer_connect_alert()
+{
+	delete alert_;
 }
 
 int peer_connect_alert::socket_type::get()
@@ -292,6 +483,16 @@ peer_disconnected_alert::peer_disconnected_alert(libtorrent::peer_disconnected_a
 {
 }
 
+peer_disconnected_alert::~peer_disconnected_alert()
+{
+	this->!peer_disconnected_alert();
+}
+
+peer_disconnected_alert::!peer_disconnected_alert()
+{
+	delete alert_;
+}
+
 error_code^ peer_disconnected_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -301,6 +502,16 @@ invalid_request_alert::invalid_request_alert(libtorrent::invalid_request_alert* 
     : peer_alert(a),
     alert_(a)
 {
+}
+
+invalid_request_alert::~invalid_request_alert()
+{
+	this->!invalid_request_alert();
+}
+
+invalid_request_alert::!invalid_request_alert()
+{
+	delete alert_;
 }
 
 torrent_finished_alert::torrent_finished_alert(libtorrent::torrent_finished_alert* a)
@@ -314,6 +525,16 @@ piece_finished_alert::piece_finished_alert(libtorrent::piece_finished_alert* a)
 {
 }
 
+piece_finished_alert::~piece_finished_alert()
+{
+	this->!piece_finished_alert();
+}
+
+piece_finished_alert::!piece_finished_alert()
+{
+	delete alert_;
+}
+
 int piece_finished_alert::piece_index::get()
 {
     return alert_->piece_index;
@@ -323,6 +544,16 @@ request_dropped_alert::request_dropped_alert(libtorrent::request_dropped_alert* 
     : peer_alert(a),
     alert_(a)
 {
+}
+
+request_dropped_alert::~request_dropped_alert()
+{
+	this->!request_dropped_alert();
+}
+
+request_dropped_alert::!request_dropped_alert()
+{
+	delete alert_;
 }
 
 int request_dropped_alert::block_index::get()
@@ -341,6 +572,16 @@ block_timeout_alert::block_timeout_alert(libtorrent::block_timeout_alert* a)
 {
 }
 
+block_timeout_alert::~block_timeout_alert()
+{
+	this->!block_timeout_alert();
+}
+
+block_timeout_alert::!block_timeout_alert()
+{
+	delete alert_;
+}
+
 int block_timeout_alert::block_index::get()
 {
     return alert_->block_index;
@@ -355,6 +596,16 @@ block_finished_alert::block_finished_alert(libtorrent::block_finished_alert* a)
     : peer_alert(a),
     alert_(a)
 {
+}
+
+block_finished_alert::~block_finished_alert()
+{
+	this->!block_finished_alert();
+}
+
+block_finished_alert::!block_finished_alert()
+{
+	delete alert_;
 }
 
 int block_finished_alert::block_index::get()
@@ -372,6 +623,17 @@ block_downloading_alert::block_downloading_alert(libtorrent::block_downloading_a
     alert_(a)
 {
 }
+
+block_downloading_alert::~block_downloading_alert()
+{
+	this->!block_downloading_alert();
+}
+
+block_downloading_alert::!block_downloading_alert()
+{
+	delete alert_;
+}
+
 
 System::String^ block_downloading_alert::peer_speedmsg::get()
 {
@@ -394,6 +656,16 @@ unwanted_block_alert::unwanted_block_alert(libtorrent::unwanted_block_alert* a)
 {
 }
 
+unwanted_block_alert::~unwanted_block_alert()
+{
+	this->!unwanted_block_alert();
+}
+
+unwanted_block_alert::!unwanted_block_alert()
+{
+	delete alert_;
+}
+
 int unwanted_block_alert::block_index::get()
 {
     return alert_->block_index;
@@ -410,6 +682,16 @@ storage_moved_alert::storage_moved_alert(libtorrent::storage_moved_alert* a)
 {
 }
 
+storage_moved_alert::~storage_moved_alert()
+{
+	this->!storage_moved_alert();
+}
+
+storage_moved_alert::!storage_moved_alert()
+{
+	delete alert_;
+}
+
 System::String^ storage_moved_alert::path::get()
 {
     return interop::from_std_string(alert_->path);
@@ -419,6 +701,16 @@ storage_moved_failed_alert::storage_moved_failed_alert(libtorrent::storage_moved
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+storage_moved_failed_alert::~storage_moved_failed_alert()
+{
+	this->!storage_moved_failed_alert();
+}
+
+storage_moved_failed_alert::!storage_moved_failed_alert()
+{
+	delete alert_;
 }
 
 error_code^ storage_moved_failed_alert::error::get()
@@ -432,6 +724,16 @@ torrent_deleted_alert::torrent_deleted_alert(libtorrent::torrent_deleted_alert* 
 {
 }
 
+torrent_deleted_alert::~torrent_deleted_alert()
+{
+	this->!torrent_deleted_alert();
+}
+
+torrent_deleted_alert::!torrent_deleted_alert()
+{
+	delete alert_;
+}
+
 sha1_hash^ torrent_deleted_alert::info_hash::get()
 {
     return gcnew sha1_hash(alert_->info_hash);
@@ -441,6 +743,16 @@ torrent_delete_failed_alert::torrent_delete_failed_alert(libtorrent::torrent_del
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+torrent_delete_failed_alert::~torrent_delete_failed_alert()
+{
+	this->!torrent_delete_failed_alert();
+}
+
+torrent_delete_failed_alert::!torrent_delete_failed_alert()
+{
+	delete alert_;
 }
 
 sha1_hash^ torrent_delete_failed_alert::info_hash::get()
@@ -459,6 +771,16 @@ save_resume_data_alert::save_resume_data_alert(libtorrent::save_resume_data_aler
 {
 }
 
+save_resume_data_alert::~save_resume_data_alert()
+{
+	this->!save_resume_data_alert();
+}
+
+save_resume_data_alert::!save_resume_data_alert()
+{
+	delete alert_;
+}
+
 entry^ save_resume_data_alert::resume_data::get()
 {
     return gcnew entry(*alert_->resume_data);
@@ -468,6 +790,16 @@ save_resume_data_failed_alert::save_resume_data_failed_alert(libtorrent::save_re
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+save_resume_data_failed_alert::~save_resume_data_failed_alert()
+{
+	this->!save_resume_data_failed_alert();
+}
+
+save_resume_data_failed_alert::!save_resume_data_failed_alert()
+{
+	delete alert_;
 }
 
 error_code^ save_resume_data_failed_alert::error::get()
@@ -496,6 +828,16 @@ url_seed_alert::url_seed_alert(libtorrent::url_seed_alert* a)
 {
 }
 
+url_seed_alert::~url_seed_alert()
+{
+	this->!url_seed_alert();
+}
+
+url_seed_alert::!url_seed_alert()
+{
+	delete alert_;
+}
+
 System::String^ url_seed_alert::url::get()
 {
     return interop::from_std_string(alert_->url);
@@ -510,6 +852,16 @@ file_error_alert::file_error_alert(libtorrent::file_error_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+file_error_alert::~file_error_alert()
+{
+	this->!file_error_alert();
+}
+
+file_error_alert::!file_error_alert()
+{
+	delete alert_;
 }
 
 System::String^ file_error_alert::file::get()
@@ -528,6 +880,16 @@ metadata_failed_alert::metadata_failed_alert(libtorrent::metadata_failed_alert* 
 {
 }
 
+metadata_failed_alert::~metadata_failed_alert()
+{
+	this->!metadata_failed_alert();
+}
+
+metadata_failed_alert::!metadata_failed_alert()
+{
+	delete alert_;
+}
+
 error_code^ metadata_failed_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -544,6 +906,16 @@ udp_error_alert::udp_error_alert(libtorrent::udp_error_alert* a)
 {
 }
 
+udp_error_alert::~udp_error_alert()
+{
+	this->!udp_error_alert();
+}
+
+udp_error_alert::!udp_error_alert()
+{
+	delete alert_;
+}
+
 error_code^ udp_error_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -555,10 +927,30 @@ external_ip_alert::external_ip_alert(libtorrent::external_ip_alert* a)
 {
 }
 
+external_ip_alert::~external_ip_alert()
+{
+	this->!external_ip_alert();
+}
+
+external_ip_alert::!external_ip_alert()
+{
+	delete alert_;
+}
+
 listen_failed_alert::listen_failed_alert(libtorrent::listen_failed_alert* a)
     : alert(a),
     alert_(a)
 {
+}
+
+listen_failed_alert::~listen_failed_alert()
+{
+	this->!listen_failed_alert();
+}
+
+listen_failed_alert::!listen_failed_alert()
+{
+	delete alert_;
 }
 
 int listen_failed_alert::operation::get()
@@ -577,10 +969,30 @@ listen_succeeded_alert::listen_succeeded_alert(libtorrent::listen_succeeded_aler
 {
 }
 
+listen_succeeded_alert::~listen_succeeded_alert()
+{
+	this->!listen_succeeded_alert();
+}
+
+listen_succeeded_alert::!listen_succeeded_alert()
+{
+	delete alert_;
+}
+
 portmap_error_alert::portmap_error_alert(libtorrent::portmap_error_alert* a)
     : alert(a),
     alert_(a)
 {
+}
+
+portmap_error_alert::~portmap_error_alert()
+{
+	this->!portmap_error_alert();
+}
+
+portmap_error_alert::!portmap_error_alert()
+{
+	delete alert_;
 }
 
 int portmap_error_alert::mapping::get()
@@ -604,6 +1016,16 @@ portmap_alert::portmap_alert(libtorrent::portmap_alert* a)
 {
 }
 
+portmap_alert::~portmap_alert()
+{
+	this->!portmap_alert();
+}
+
+portmap_alert::!portmap_alert()
+{
+	delete alert_;
+}
+
 int portmap_alert::mapping::get()
 {
     return alert_->mapping;
@@ -625,6 +1047,16 @@ portmap_log_alert::portmap_log_alert(libtorrent::portmap_log_alert* a)
 {
 }
 
+portmap_log_alert::~portmap_log_alert()
+{
+	this->!portmap_log_alert();
+}
+
+portmap_log_alert::!portmap_log_alert()
+{
+	delete alert_;
+}
+
 int portmap_log_alert::map_type::get()
 {
     return alert_->map_type;
@@ -641,6 +1073,16 @@ fastresume_rejected_alert::fastresume_rejected_alert(libtorrent::fastresume_reje
 {
 }
 
+fastresume_rejected_alert::~fastresume_rejected_alert()
+{
+	this->!fastresume_rejected_alert();
+}
+
+fastresume_rejected_alert::!fastresume_rejected_alert()
+{
+	delete alert_;
+}
+
 error_code^ fastresume_rejected_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -652,6 +1094,16 @@ peer_blocked_alert::peer_blocked_alert(libtorrent::peer_blocked_alert* a)
 {
 }
 
+peer_blocked_alert::~peer_blocked_alert()
+{
+	this->!peer_blocked_alert();
+}
+
+peer_blocked_alert::!peer_blocked_alert()
+{
+	delete alert_;
+}
+
 int peer_blocked_alert::reason::get()
 {
     return alert_->reason;
@@ -661,6 +1113,16 @@ dht_announce_alert::dht_announce_alert(libtorrent::dht_announce_alert* a)
     : alert(a),
     alert_(a)
 {
+}
+
+dht_announce_alert::~dht_announce_alert()
+{
+	this->!dht_announce_alert();
+}
+
+dht_announce_alert::!dht_announce_alert()
+{
+	delete alert_;
 }
 
 int dht_announce_alert::port::get()
@@ -679,6 +1141,16 @@ dht_get_peers_alert::dht_get_peers_alert(libtorrent::dht_get_peers_alert* a)
 {
 }
 
+dht_get_peers_alert::~dht_get_peers_alert()
+{
+	this->!dht_get_peers_alert();
+}
+
+dht_get_peers_alert::!dht_get_peers_alert()
+{
+	delete alert_;
+}
+
 sha1_hash^ dht_get_peers_alert::info_hash::get()
 {
     return gcnew sha1_hash(alert_->info_hash);
@@ -688,6 +1160,16 @@ stats_alert::stats_alert(libtorrent::stats_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+stats_alert::~stats_alert()
+{
+	this->!stats_alert();
+}
+
+stats_alert::!stats_alert()
+{
+	delete alert_;
 }
 
 cli::array<int>^ stats_alert::transferred::get()
@@ -719,6 +1201,16 @@ anonymous_mode_alert::anonymous_mode_alert(libtorrent::anonymous_mode_alert* a)
 {
 }
 
+anonymous_mode_alert::~anonymous_mode_alert()
+{
+	this->!anonymous_mode_alert();
+}
+
+anonymous_mode_alert::!anonymous_mode_alert()
+{
+	delete alert_;
+}
+
 int anonymous_mode_alert::kind::get()
 {
     return alert_->kind;
@@ -740,6 +1232,16 @@ trackerid_alert::trackerid_alert(libtorrent::trackerid_alert* a)
 {
 }
 
+trackerid_alert::~trackerid_alert()
+{
+	this->!trackerid_alert();
+}
+
+trackerid_alert::!trackerid_alert()
+{
+	delete alert_;
+}
+
 System::String^ trackerid_alert::trackerid::get()
 {
     return interop::from_std_string(alert_->trackerid);
@@ -756,6 +1258,16 @@ torrent_error_alert::torrent_error_alert(libtorrent::torrent_error_alert* a)
 {
 }
 
+torrent_error_alert::~torrent_error_alert()
+{
+	this->!torrent_error_alert();
+}
+
+torrent_error_alert::!torrent_error_alert()
+{
+	delete alert_;
+}
+
 error_code^ torrent_error_alert::error::get()
 {
     return gcnew error_code(alert_->error);
@@ -765,6 +1277,16 @@ torrent_need_cert_alert::torrent_need_cert_alert(libtorrent::torrent_need_cert_a
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+torrent_need_cert_alert::~torrent_need_cert_alert()
+{
+	this->!torrent_need_cert_alert();
+}
+
+torrent_need_cert_alert::!torrent_need_cert_alert()
+{
+	delete alert_;
 }
 
 error_code^ torrent_need_cert_alert::error::get()
@@ -778,6 +1300,16 @@ incoming_connection_alert::incoming_connection_alert(libtorrent::incoming_connec
 {
 }
 
+incoming_connection_alert::~incoming_connection_alert()
+{
+	this->!incoming_connection_alert();
+}
+
+incoming_connection_alert::!incoming_connection_alert()
+{
+	delete alert_;
+}
+
 int incoming_connection_alert::socket_type::get()
 {
     return alert_->socket_type;
@@ -787,6 +1319,16 @@ add_torrent_alert::add_torrent_alert(libtorrent::add_torrent_alert* a)
     : torrent_alert(a),
     alert_(a)
 {
+}
+
+add_torrent_alert::~add_torrent_alert()
+{
+	this->!add_torrent_alert();
+}
+
+add_torrent_alert::!add_torrent_alert()
+{
+	delete alert_;
 }
 
 error_code^ add_torrent_alert::error::get()
@@ -799,6 +1341,17 @@ state_update_alert::state_update_alert(libtorrent::state_update_alert* a)
     alert_(a)
 {
 }
+
+state_update_alert::~state_update_alert()
+{
+	this->!state_update_alert();
+}
+
+state_update_alert::!state_update_alert()
+{
+	delete alert_;
+}
+
 
 cli::array<torrent_status^>^ state_update_alert::status::get()
 {
@@ -818,6 +1371,16 @@ torrent_update_alert::torrent_update_alert(libtorrent::torrent_update_alert* a)
 {
 }
 
+torrent_update_alert::~torrent_update_alert()
+{
+	this->!torrent_update_alert();
+}
+
+torrent_update_alert::!torrent_update_alert()
+{
+	delete alert_;
+}
+
 sha1_hash^ torrent_update_alert::old_ih::get()
 {
     return gcnew sha1_hash(alert_->old_ih);
@@ -832,6 +1395,16 @@ dht_error_alert::dht_error_alert(libtorrent::dht_error_alert* a)
     : alert(a),
     alert_(a)
 {
+}
+
+dht_error_alert::~dht_error_alert()
+{
+	this->!dht_error_alert();
+}
+
+dht_error_alert::!dht_error_alert()
+{
+	delete alert_;
 }
 
 error_code^ dht_error_alert::error::get()

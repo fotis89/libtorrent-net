@@ -17,7 +17,12 @@ session_status::session_status(libtorrent::session_status& status)
 
 session_status::~session_status()
 {
-    delete status_;
+	this->!session_status();
+}
+
+session_status::!session_status()
+{
+	delete status_;
 }
 
 SESS_PROP(bool, has_incoming_connections);

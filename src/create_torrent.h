@@ -23,6 +23,7 @@ namespace lt
         create_torrent(file_storage^ fs, int piece_size, int pad_file_limit, int flags);
         create_torrent(file_storage^ fs, int piece_size, int pad_file_limit, int flags, int alignment);
         ~create_torrent();
+		!create_torrent();
 
         static void add_files(file_storage^ fs, System::String^ path);
         static void add_files(file_storage^ fs, System::String^ path, unsigned int flags);

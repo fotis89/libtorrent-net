@@ -18,6 +18,7 @@ namespace lt
 
     public:
         ~file_entry();
+		!file_entry();
 
         FE_PROP(System::String^, path);
         FE_PROP(System::String^, symlink_path);

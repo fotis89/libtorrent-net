@@ -15,6 +15,7 @@ namespace lt
 
     public:
         ~torrent_status();
+		!torrent_status();
 
         // TODO handle
 

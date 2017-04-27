@@ -21,7 +21,12 @@ torrent_handle::torrent_handle(libtorrent::torrent_handle& handle)
 
 torrent_handle::~torrent_handle()
 {
-    delete handle_;
+	this->!torrent_handle();
+}
+
+torrent_handle::!torrent_handle()
+{
+	delete handle_;
 }
 
 libtorrent::torrent_handle* torrent_handle::ptr()

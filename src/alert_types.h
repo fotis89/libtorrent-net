@@ -98,6 +98,8 @@ namespace lt
     {
     public:
         torrent_alert(libtorrent::torrent_alert* alert);
+		~torrent_alert();
+		!torrent_alert();
 
         property torrent_handle^ handle
         {
@@ -117,6 +119,8 @@ namespace lt
     {
     public:
         peer_alert(libtorrent::peer_alert* alert);
+		~peer_alert();
+		!peer_alert();
 
         // TODO ip
         property sha1_hash^ pid { sha1_hash^ get(); }
@@ -133,6 +137,8 @@ namespace lt
     {
     public:
         tracker_alert(libtorrent::tracker_alert* alert);
+		~tracker_alert();
+		!tracker_alert();
 
         property System::String^ url { System::String^ get(); }
 
@@ -177,6 +183,8 @@ namespace lt
     {
     public:
         read_piece_alert(libtorrent::read_piece_alert* alert);
+		~read_piece_alert();
+		!read_piece_alert();
 
         property cli::array<System::Byte>^ buffer
         {
@@ -199,6 +207,8 @@ namespace lt
     {
     public:
         file_completed_alert(libtorrent::file_completed_alert* alert);
+		~file_completed_alert();
+		!file_completed_alert();
 
         ///<summary>The index of the file that completed.</summary>
         property int index { int get(); }
@@ -215,6 +225,8 @@ namespace lt
     {
     public:
         file_renamed_alert(libtorrent::file_renamed_alert* alert);
+		~file_renamed_alert();
+		!file_renamed_alert();
 
         ///<summary>The new name of the file.</summary>
         property System::String^ name { System::String^ get(); }
@@ -234,6 +246,8 @@ namespace lt
     {
     public:
         file_rename_failed_alert(libtorrent::file_rename_failed_alert* alert);
+		~file_rename_failed_alert();
+		!file_rename_failed_alert();
 
         ///<summary>The index of the file that was supposed to be renamed.</summary>
         property int index { int get(); }
@@ -252,6 +266,8 @@ namespace lt
     {
     public:
         performance_alert(libtorrent::performance_alert* alert);
+		~performance_alert();
+		!performance_alert();
 
         property int warning_code { int get(); } // TODO enum
 
@@ -266,6 +282,8 @@ namespace lt
     {
     public:
         state_changed_alert(libtorrent::state_changed_alert* alert);
+		~state_changed_alert();
+		!state_changed_alert();
 
         property int state { int get(); } // TODO torrent_status::state_t
         property int prev_state { int get(); } // TODO torrent_status::state_t
@@ -283,6 +301,8 @@ namespace lt
     {
     public:
         tracker_error_alert(libtorrent::tracker_error_alert* alert);
+		~tracker_error_alert();
+		!tracker_error_alert();
 
         property int times_in_row { int get(); }
         property int status_code { int get(); }
@@ -302,6 +322,8 @@ namespace lt
     {
     public:
         tracker_warning_alert(libtorrent::tracker_warning_alert* alert);
+		~tracker_warning_alert();
+		!tracker_warning_alert();
 
         property System::String^ msg { System::String^ get(); }
 
@@ -316,6 +338,8 @@ namespace lt
     {
     public:
         scrape_reply_alert(libtorrent::scrape_reply_alert* alert);
+		~scrape_reply_alert();
+		!scrape_reply_alert();
 
         property int incomplete { int get(); }
         property int complete { int get(); }
@@ -333,6 +357,8 @@ namespace lt
     {
     public:
         scrape_failed_alert(libtorrent::scrape_failed_alert* alert);
+		~scrape_failed_alert();
+		!scrape_failed_alert();
 
         property System::String^ msg { System::String^ get(); }
 
@@ -349,6 +375,8 @@ namespace lt
     {
     public:
         tracker_reply_alert(libtorrent::tracker_reply_alert* alert);
+		~tracker_reply_alert();
+		!tracker_reply_alert();
 
         property int num_peers { int get(); }
 
@@ -366,6 +394,8 @@ namespace lt
     {
     public:
         dht_reply_alert(libtorrent::dht_reply_alert* alert);
+		~dht_reply_alert();
+		!dht_reply_alert();
 
         property int num_peers { int get(); }
 
@@ -382,6 +412,8 @@ namespace lt
     {
     public:
         tracker_announce_alert(libtorrent::tracker_announce_alert* alert);
+		~tracker_announce_alert();
+		!tracker_announce_alert();
 
         property int event { int get(); }
 
@@ -398,6 +430,8 @@ namespace lt
     {
     public:
         hash_failed_alert(libtorrent::hash_failed_alert* alert);
+		~hash_failed_alert();
+		!hash_failed_alert();
 
         property int piece_index { int get(); }
 
@@ -445,6 +479,8 @@ namespace lt
     {
     public:
         peer_error_alert(libtorrent::peer_error_alert* alert);
+		~peer_error_alert();
+		!peer_error_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::peer_error_alert* alert_;
@@ -458,6 +494,8 @@ namespace lt
     {
     public:
         peer_connect_alert(libtorrent::peer_connect_alert* alert);
+		~peer_connect_alert(); 
+    	!peer_connect_alert();
 
         property int socket_type { int get(); }
     private:
@@ -472,6 +510,8 @@ namespace lt
     {
     public:
         peer_disconnected_alert(libtorrent::peer_disconnected_alert* alert);
+		~peer_disconnected_alert();
+		!peer_disconnected_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::peer_disconnected_alert* alert_;
@@ -486,6 +526,8 @@ namespace lt
     {
     public:
         invalid_request_alert(libtorrent::invalid_request_alert* alert);
+		~invalid_request_alert();
+		!invalid_request_alert();
         // TODO peer request
     private:
         libtorrent::invalid_request_alert* alert_;
@@ -511,6 +553,8 @@ namespace lt
     {
     public:
         piece_finished_alert(libtorrent::piece_finished_alert* alert);
+		~piece_finished_alert();
+		!piece_finished_alert();
 
         property int piece_index { int get(); }
     private:
@@ -524,6 +568,8 @@ namespace lt
     {
     public:
         request_dropped_alert(libtorrent::request_dropped_alert* alert);
+		~request_dropped_alert();
+		!request_dropped_alert();
 
         property int block_index { int get(); }
         property int piece_index { int get(); }
@@ -538,6 +584,8 @@ namespace lt
     {
     public:
         block_timeout_alert(libtorrent::block_timeout_alert* alert);
+		~block_timeout_alert();
+		!block_timeout_alert();
 
         property int block_index { int get(); }
         property int piece_index { int get(); }
@@ -552,6 +600,8 @@ namespace lt
     {
     public:
         block_finished_alert(libtorrent::block_finished_alert* alert);
+		~block_finished_alert();
+		!block_finished_alert();
 
         property int block_index { int get(); }
         property int piece_index { int get(); }
@@ -566,6 +616,8 @@ namespace lt
     {
     public:
         block_downloading_alert(libtorrent::block_downloading_alert* alert);
+		~block_downloading_alert();
+		!block_downloading_alert();
 
         property System::String^ peer_speedmsg { System::String^ get(); }
         property int block_index { int get(); }
@@ -582,6 +634,8 @@ namespace lt
     {
     public:
         unwanted_block_alert(libtorrent::unwanted_block_alert* alert);
+		~unwanted_block_alert();
+		!unwanted_block_alert();
 
         property int block_index { int get(); }
         property int piece_index { int get(); }
@@ -599,6 +653,8 @@ namespace lt
     {
     public:
         storage_moved_alert(libtorrent::storage_moved_alert* alert);
+		~storage_moved_alert();
+		!storage_moved_alert();
 
         property System::String^ path { System::String^ get(); }
     private:
@@ -613,6 +669,8 @@ namespace lt
     {
     public:
         storage_moved_failed_alert(libtorrent::storage_moved_failed_alert* alert);
+		~storage_moved_failed_alert();
+		!storage_moved_failed_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::storage_moved_failed_alert* alert_;
@@ -630,6 +688,8 @@ namespace lt
     {
     public:
         torrent_deleted_alert(libtorrent::torrent_deleted_alert* alert);
+		~torrent_deleted_alert();
+		!torrent_deleted_alert();
         property sha1_hash^ info_hash { sha1_hash^ get(); }
     private:
         libtorrent::torrent_deleted_alert* alert_;
@@ -643,6 +703,8 @@ namespace lt
     {
     public:
         torrent_delete_failed_alert(libtorrent::torrent_delete_failed_alert* alert);
+		~torrent_delete_failed_alert();
+		!torrent_delete_failed_alert();
         property error_code^ error { error_code^ get(); }
         property sha1_hash^ info_hash { sha1_hash^ get(); }
     private:
@@ -658,6 +720,8 @@ namespace lt
     {
     public:
         save_resume_data_alert(libtorrent::save_resume_data_alert* alert);
+		~save_resume_data_alert();
+		!save_resume_data_alert();
 
         property entry^ resume_data { entry^ get(); }
     private:
@@ -672,6 +736,8 @@ namespace lt
     {
     public:
         save_resume_data_failed_alert(libtorrent::save_resume_data_failed_alert* alert);
+		~save_resume_data_failed_alert();
+		!save_resume_data_failed_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::save_resume_data_failed_alert* alert_;
@@ -718,6 +784,8 @@ namespace lt
     {
     public:
         url_seed_alert(libtorrent::url_seed_alert* alert);
+		~url_seed_alert();
+		!url_seed_alert();
 
         property System::String^ url { System::String^ get(); }
         property System::String^ msg { System::String^ get(); }
@@ -733,6 +801,8 @@ namespace lt
     {
     public:
         file_error_alert(libtorrent::file_error_alert* alert);
+		~file_error_alert();
+		!file_error_alert();
 
         property System::String^ file { System::String^ get(); }
         property error_code^ error { error_code^ get(); }
@@ -751,6 +821,8 @@ namespace lt
     {
     public:
         metadata_failed_alert(libtorrent::metadata_failed_alert* alert);
+		~metadata_failed_alert();
+		!metadata_failed_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::metadata_failed_alert* alert_;
@@ -780,6 +852,8 @@ namespace lt
     {
     public:
         udp_error_alert(libtorrent::udp_error_alert* alert);
+		~udp_error_alert();
+		!udp_error_alert();
         // TODO endpoint
         property error_code^ error { error_code^ get(); }
     private:
@@ -796,6 +870,8 @@ namespace lt
     {
     public:
         external_ip_alert(libtorrent::external_ip_alert* alert);
+		~external_ip_alert();
+		!external_ip_alert();
         // TODO external_address
     private:
         libtorrent::external_ip_alert* alert_;
@@ -814,6 +890,8 @@ namespace lt
     {
     public:
         listen_failed_alert(libtorrent::listen_failed_alert* alert);
+		~listen_failed_alert();
+		!listen_failed_alert();
 
         // TODO endpoint
         property error_code^ error { error_code^ get(); }
@@ -832,6 +910,8 @@ namespace lt
     {
     public:
         listen_succeeded_alert(libtorrent::listen_succeeded_alert* alert);
+		~listen_succeeded_alert();
+		!listen_succeeded_alert();
 
         // TODO endpoint
         // TODO sock_type
@@ -851,6 +931,8 @@ namespace lt
     {
     public:
         portmap_error_alert(libtorrent::portmap_error_alert* alert);
+		~portmap_error_alert();
+		!portmap_error_alert();
 
         property int mapping { int get(); }
         property int map_type { int get(); }
@@ -869,6 +951,8 @@ namespace lt
     {
     public:
         portmap_alert(libtorrent::portmap_alert* alert);
+		~portmap_alert();
+		!portmap_alert();
 
         property int mapping { int get(); }
         property int external_port { int get(); }
@@ -887,6 +971,8 @@ namespace lt
     {
     public:
         portmap_log_alert(libtorrent::portmap_log_alert* alert);
+		~portmap_log_alert();
+		!portmap_log_alert();
 
         property int map_type { int get(); }
         property System::String^ msg { System::String^ get(); }
@@ -903,6 +989,8 @@ namespace lt
     {
     public:
         fastresume_rejected_alert(libtorrent::fastresume_rejected_alert* alert);
+		~fastresume_rejected_alert();
+		!fastresume_rejected_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::fastresume_rejected_alert* alert_;
@@ -916,6 +1004,8 @@ namespace lt
     {
     public:
         peer_blocked_alert(libtorrent::peer_blocked_alert* alert);
+		~peer_blocked_alert();
+		!peer_blocked_alert();
 
         // TODO  ip
         property int reason { int get(); }
@@ -931,6 +1021,8 @@ namespace lt
     {
     public:
         dht_announce_alert(libtorrent::dht_announce_alert* alert);
+		~dht_announce_alert();
+		!dht_announce_alert();
 
         // TODO ip
         property int port { int get(); }
@@ -947,6 +1039,8 @@ namespace lt
     {
     public:
         dht_get_peers_alert(libtorrent::dht_get_peers_alert* alert);
+		~dht_get_peers_alert();
+		!dht_get_peers_alert();
         property sha1_hash^ info_hash { sha1_hash^ get(); }
     private:
         libtorrent::dht_get_peers_alert* alert_;
@@ -961,6 +1055,8 @@ namespace lt
     {
     public:
         stats_alert(libtorrent::stats_alert* alert);
+		~stats_alert();
+		!stats_alert();
 
         property cli::array<int>^ transferred { cli::array<int>^ get(); }
         property int interval { int get(); }
@@ -993,6 +1089,8 @@ namespace lt
     {
     public:
         anonymous_mode_alert(libtorrent::anonymous_mode_alert* alert);
+		~anonymous_mode_alert();
+		!anonymous_mode_alert();
 
         property int kind { int get(); }
         property System::String^ str { System::String^ get(); }
@@ -1019,6 +1117,8 @@ namespace lt
     {
     public:
         trackerid_alert(libtorrent::trackerid_alert* alert);
+		~trackerid_alert();
+		!trackerid_alert();
 
         property System::String^ trackerid { System::String^ get(); }
     private:
@@ -1041,6 +1141,8 @@ namespace lt
     {
     public:
         torrent_error_alert(libtorrent::torrent_error_alert* alert);
+		~torrent_error_alert();
+		!torrent_error_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::torrent_error_alert* alert_;
@@ -1057,6 +1159,8 @@ namespace lt
     {
     public:
         torrent_need_cert_alert(libtorrent::torrent_need_cert_alert* alert);
+		~torrent_need_cert_alert();
+		!torrent_need_cert_alert();
         property error_code^ error { error_code^ get(); }
     private:
         libtorrent::torrent_need_cert_alert* alert_;
@@ -1074,6 +1178,8 @@ namespace lt
     {
     public:
         incoming_connection_alert(libtorrent::incoming_connection_alert* alert);
+		~incoming_connection_alert();
+		!incoming_connection_alert();
 
         property int socket_type { int get(); }
         // TODO ip
@@ -1091,6 +1197,8 @@ namespace lt
     {
     public:
         add_torrent_alert(libtorrent::add_torrent_alert* alert);
+		~add_torrent_alert();
+		!add_torrent_alert();
 
         // TODO params
         property error_code^ error { error_code^ get(); }
@@ -1109,6 +1217,8 @@ namespace lt
     {
     public:
         state_update_alert(libtorrent::state_update_alert* alert);
+		~state_update_alert();
+		!state_update_alert();
         property cli::array<torrent_status^>^ status { cli::array<torrent_status^>^ get(); }
     private:
         libtorrent::state_update_alert* alert_;
@@ -1126,6 +1236,8 @@ namespace lt
     {
     public:
         torrent_update_alert(libtorrent::torrent_update_alert* alert);
+		~torrent_update_alert();
+		!torrent_update_alert();
         property sha1_hash^ old_ih { sha1_hash^ get(); }
         property sha1_hash^ new_ih { sha1_hash^ get(); }
     private:
@@ -1140,6 +1252,8 @@ namespace lt
     {
     public:
         dht_error_alert(libtorrent::dht_error_alert* alert);
+		~dht_error_alert();
+		!dht_error_alert();
         property error_code^ error { error_code^ get(); }
         // TODO operation
     private:

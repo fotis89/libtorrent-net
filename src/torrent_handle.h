@@ -21,6 +21,7 @@ namespace lt
 
     public:
         ~torrent_handle();
+		!torrent_handle();
         void add_piece(int piece, cli::array<System::Byte>^ data, int flags);
         void read_piece(int index);
         bool have_piece(int index);

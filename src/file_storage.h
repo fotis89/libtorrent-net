@@ -18,6 +18,7 @@ namespace lt
     public:
         file_storage();
         ~file_storage();
+		!file_storage();
 
         bool is_valid();
         void reserve(int num_files);

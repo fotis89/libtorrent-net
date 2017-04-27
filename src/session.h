@@ -24,6 +24,7 @@ namespace lt
     public:
         session();
         ~session();
+		!session();
 
         void load_state(lazy_entry^ e);
         entry^ save_state(unsigned int flags);

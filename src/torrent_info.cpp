@@ -32,7 +32,12 @@ torrent_info::torrent_info(const libtorrent::torrent_info& info)
 
 torrent_info::~torrent_info()
 {
-    delete info_;
+	this->!torrent_info();
+}
+
+torrent_info::!torrent_info()
+{
+	delete info_;
 }
 
 void torrent_info::rename_file(int index, System::String^ new_filename)

@@ -16,6 +16,7 @@ namespace lt
     public:
         sha1_hash(System::String^ val);
         ~sha1_hash();
+		!sha1_hash();
 
         System::String^ ToString() override;
 

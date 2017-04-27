@@ -15,6 +15,7 @@ namespace lt
 
     public:
         ~lazy_entry();
+		!lazy_entry();
 
     private:
         libtorrent::lazy_entry* entry_;

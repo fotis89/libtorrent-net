@@ -16,7 +16,12 @@ torrent_status::torrent_status(libtorrent::torrent_status& status)
 
 torrent_status::~torrent_status()
 {
-    delete status_;
+	this->!torrent_status();
+}
+
+torrent_status::!torrent_status()
+{
+	delete status_;
 }
 
 System::String^ torrent_status::error::get()

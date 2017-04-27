@@ -21,7 +21,12 @@ announce_entry::announce_entry(System::String^ url)
 
 announce_entry::~announce_entry()
 {
-    delete entry_;
+	this->!announce_entry();
+}
+
+announce_entry::!announce_entry()
+{
+	delete entry_;
 }
 
 libtorrent::announce_entry* announce_entry::ptr()

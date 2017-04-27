@@ -14,6 +14,7 @@ namespace lt
 
     public:
         ~session_status();
+		!session_status();
 
         property bool has_incoming_connections { bool get(); }
         property int upload_rate { int get(); }

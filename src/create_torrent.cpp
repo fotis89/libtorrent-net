@@ -36,7 +36,12 @@ create_torrent::create_torrent(file_storage^ fs, int piece_size, int pad_file_li
 
 create_torrent::~create_torrent()
 {
-    delete create_;
+	this->!create_torrent();
+}
+
+create_torrent::!create_torrent()
+{
+	delete create_;
 }
 
 libtorrent::create_torrent& create_torrent::ptr()

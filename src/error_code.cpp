@@ -16,7 +16,12 @@ error_code::error_code()
 
 error_code::~error_code()
 {
-    delete error_;
+	this->!error_code();
+}
+
+error_code::!error_code()
+{
+	delete error_;
 }
 
 System::String^ error_code::message()

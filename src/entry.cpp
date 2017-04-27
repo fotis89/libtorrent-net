@@ -11,7 +11,12 @@ entry::entry(const libtorrent::entry& e)
 
 entry::~entry()
 {
-    delete entry_;
+	this->!entry();
+}
+
+entry::!entry()
+{
+	delete entry_;
 }
 
 libtorrent::entry* entry::ptr()
