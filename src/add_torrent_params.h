@@ -15,6 +15,7 @@ namespace lt
     public:
         add_torrent_params();
         ~add_torrent_params();
+		!add_torrent_params();
 
         property System::String^ name
         {

@@ -16,7 +16,12 @@ add_torrent_params::add_torrent_params()
 
 add_torrent_params::~add_torrent_params()
 {
-    delete params_;
+	this->!add_torrent_params();
+}
+
+add_torrent_params::!add_torrent_params()
+{
+	delete params_;
 }
 
 System::String^ add_torrent_params::name::get()

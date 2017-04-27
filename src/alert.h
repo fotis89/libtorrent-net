@@ -17,6 +17,7 @@ namespace lt
 
     public:
         ~alert();
+		!alert();
 
         System::DateTime timestamp();
         int type();

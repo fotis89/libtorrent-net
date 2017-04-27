@@ -22,7 +22,12 @@ alert::alert(libtorrent::alert* al)
 
 alert::~alert()
 {
-    delete alert_;
+	this->!alert();
+}
+
+alert::!alert()
+{
+	delete alert_;
 }
 
 alert^ alert::create(std::auto_ptr<libtorrent::alert> al)
