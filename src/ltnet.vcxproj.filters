@@ -84,6 +84,12 @@
     <ClInclude Include="magnet-uri.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="proxy_settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="proxy_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="session.cpp">
@@ -153,6 +159,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="magnet_uri.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="proxy_settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

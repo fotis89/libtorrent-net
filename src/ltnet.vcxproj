@@ -158,6 +158,8 @@
     <ClInclude Include="lazy_entry.h" />
     <ClInclude Include="magnet-uri.h" />
     <ClInclude Include="peer_info.h" />
+    <ClInclude Include="proxy_settings.h" />
+    <ClInclude Include="proxy_type.h" />
     <ClInclude Include="session.h" />
     <ClInclude Include="session_alert_dispatcher.h" />
     <ClInclude Include="session_settings.h" />
@@ -183,6 +185,7 @@
     <ClCompile Include="lazy_entry.cpp" />
     <ClCompile Include="magnet_uri.cpp" />
     <ClCompile Include="peer_info.cpp" />
+    <ClCompile Include="proxy_settings.cpp" />
     <ClCompile Include="session.cpp" />
     <ClCompile Include="session_alert_dispatcher.cpp" />
     <ClCompile Include="session_settings.cpp" />

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "proxy_settings.h"
+
 namespace libtorrent
 {
     class session;
@@ -95,6 +97,7 @@ namespace lt
         // TODO pop alerts
         // TODO pop alert
         // TODO wait for alert
+		void set_proxy(proxy_settings^ s);
         void set_alert_mask(unsigned int mask);
         void set_alert_dispatch(System::Action<alert^>^ dispatch);
         void clear_alert_dispatch();

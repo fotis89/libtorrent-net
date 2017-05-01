@@ -194,9 +194,14 @@ session_settings^ session::settings()
     return gcnew session_settings(session_->settings());
 }
 
+void session::set_proxy(proxy_settings^ settings)
+{
+    session_->set_proxy(*settings->ptr());
+}
+
 void session::set_settings(session_settings^ settings)
 {
-    session_->set_settings(settings->ptr());
+	session_->set_settings(settings->ptr());
 }
 
 void session::set_alert_mask(unsigned int mask)
