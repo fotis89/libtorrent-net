@@ -30,8 +30,8 @@ session::~session()
 
 session::!session()
 {
-	delete dispatcher_;
 	delete session_;
+	delete dispatcher_;
 }
 
 void session::load_state(lazy_entry^ e)
