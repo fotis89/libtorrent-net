@@ -29,8 +29,6 @@ namespace lt
         property long long total_upload { long long get(); }
         // TODO pid
         // TODO pieces
-        property int upload_limit { int get(); }
-        property int download_limit { int get(); }
         property System::TimeSpan last_request { System::TimeSpan get(); }
         property System::TimeSpan last_active { System::TimeSpan get(); }
         property System::TimeSpan download_queue_time { System::TimeSpan get(); }
@@ -41,7 +39,6 @@ namespace lt
         property int receive_buffer_size { int get(); }
         property int used_receive_buffer { int get(); }
         property int num_hashfails { int get(); }
-        property System::String^ country { System::String^ get(); }
         property int download_queue_length { int get(); }
         property int timed_out_requests { int get(); }
         property int busy_requests { int get(); }

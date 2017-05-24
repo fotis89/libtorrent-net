@@ -14,7 +14,5 @@ namespace lt
     {
     public:
         static cli::array<System::Byte>^ bencode(entry^ e);
-
-        static lazy_entry^ lazy_bdecode(cli::array<System::Byte>^ buffer);
     };
 }

@@ -87,7 +87,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>C:\libtorrent-rasterbar-1.1.3\include;C:\boost_1_64_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\boost-link-static\link-static\threading-multi\src;C:\boost_1_64_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\src;C:\boost_1_64_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -122,11 +122,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;TORRENT_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\boost-link-static\link-static\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc141-mt-1_64.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc141-mt-1_64.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -145,25 +145,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="add_torrent_params.h" />
-    <ClInclude Include="alert.h" />
-    <ClInclude Include="alert_types.h" />
     <ClInclude Include="announce_entry.h" />
     <ClInclude Include="create_torrent.h" />
-    <ClInclude Include="dht_settings.h" />
     <ClInclude Include="entry.h" />
     <ClInclude Include="error_code.h" />
-    <ClInclude Include="file_entry.h" />
     <ClInclude Include="file_storage.h" />
     <ClInclude Include="interop.h" />
-    <ClInclude Include="lazy_entry.h" />
     <ClInclude Include="magnet-uri.h" />
     <ClInclude Include="peer_info.h" />
-    <ClInclude Include="proxy_settings.h" />
     <ClInclude Include="proxy_type.h" />
     <ClInclude Include="session.h" />
-    <ClInclude Include="session_alert_dispatcher.h" />
-    <ClInclude Include="session_settings.h" />
-    <ClInclude Include="session_status.h" />
+    <ClInclude Include="settings_pack.h" />
     <ClInclude Include="sha1_hash.h" />
     <ClInclude Include="torrent_handle.h" />
     <ClInclude Include="torrent_info.h" />
@@ -172,24 +164,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="add_torrent_params.cpp" />
-    <ClCompile Include="alert.cpp" />
-    <ClCompile Include="alert_types.cpp" />
     <ClCompile Include="announce_entry.cpp" />
     <ClCompile Include="create_torrent.cpp" />
-    <ClCompile Include="dht_settings.cpp" />
     <ClCompile Include="entry.cpp" />
     <ClCompile Include="error_code.cpp" />
-    <ClCompile Include="file_entry.cpp" />
     <ClCompile Include="file_storage.cpp" />
     <ClCompile Include="interop.cpp" />
-    <ClCompile Include="lazy_entry.cpp" />
     <ClCompile Include="magnet_uri.cpp" />
     <ClCompile Include="peer_info.cpp" />
-    <ClCompile Include="proxy_settings.cpp" />
     <ClCompile Include="session.cpp" />
-    <ClCompile Include="session_alert_dispatcher.cpp" />
-    <ClCompile Include="session_settings.cpp" />
-    <ClCompile Include="session_status.cpp" />
+    <ClCompile Include="settings_pack.cpp" />
     <ClCompile Include="sha1_hash.cpp" />
     <ClCompile Include="torrent_handle.cpp" />
     <ClCompile Include="torrent_info.cpp" />

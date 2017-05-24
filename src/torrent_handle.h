@@ -61,8 +61,6 @@ namespace lt
         int queue_position();
         void queue_position_bottom();
         void queue_position_up();
-        void resolve_countries(bool b);
-        bool resolve_countries();
         void set_ssl_certificate(System::String^ certificate, System::String^ private_key, System::String^ dh_params, System::String^ passphrase);
         // TODO set ssl cert buffer
         // TODO storage
@@ -89,7 +87,6 @@ namespace lt
         void set_max_uploads(int max_uploads);
         int max_connections();
         void set_max_connections(int max_connections);
-        void set_tracker_login(System::String^ name, System::String^ password);
         void move_storage(System::String^ save_path, int flags); // TODO flags
         void rename_file(int index, System::String^ name);
         void super_seeding(bool on);

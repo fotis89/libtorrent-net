@@ -3,24 +3,18 @@
 #include <libtorrent/session.hpp>
 #include <libtorrent/session_status.hpp>
 
-#include "alert.h"
 #include "add_torrent_params.h"
-#include "dht_settings.h"
 #include "entry.h"
 #include "interop.h"
-#include "lazy_entry.h"
-#include "session_alert_dispatcher.h"
-#include "session_settings.h"
-#include "session_status.h"
 #include "sha1_hash.h"
 #include "torrent_handle.h"
+#include "settings_pack.h"
 
 using namespace lt;
 
-session::session()
+session::session(settings_pack ^ settings)
 {
-    dispatcher_ = new session_alert_dispatcher();
-    session_ = new libtorrent::session();
+    session_ = new libtorrent::session(settings->ptr());
 }
 
 session::~session()
@@ -31,12 +25,6 @@ session::~session()
 session::!session()
 {
 	delete session_;
-	delete dispatcher_;
-}
-
-void session::load_state(lazy_entry^ e)
-{
-    session_->load_state(*e->ptr());
 }
 
 entry^ session::save_state(unsigned int flags)
@@ -103,39 +91,9 @@ bool session::is_paused()
     return session_->is_paused();
 }
 
-session_status^ session::status()
-{
-    return gcnew session_status(session_->status());
-}
-
 bool session::is_dht_running()
 {
     return session_->is_dht_running();
-}
-
-dht_settings^ session::get_dht_settings()
-{
-    return gcnew dht_settings(session_->get_dht_settings());
-}
-
-void session::start_dht()
-{
-    session_->start_dht();
-}
-
-void session::stop_dht()
-{
-    session_->stop_dht();
-}
-
-void session::set_dht_settings(dht_settings^ settings)
-{
-    session_->set_dht_settings(settings->ptr());
-}
-
-void session::add_dht_router(System::String^ host, int port)
-{
-    session_->add_dht_router(std::make_pair(interop::to_std_string(host), port));
 }
 
 void session::add_dht_node(System::String^ host, int port)
@@ -143,30 +101,9 @@ void session::add_dht_node(System::String^ host, int port)
     session_->add_dht_node(std::make_pair(interop::to_std_string(host), port));
 }
 
-void session::load_country_db(System::String^ file)
-{
-    session_->load_country_db(interop::to_std_string(file).c_str());
-}
-
-void session::load_asnum_db(System::String^ file)
-{
-    session_->load_asnum_db(interop::to_std_string(file).c_str());
-}
-
 void session::set_key(int key)
 {
     session_->set_key(key);
-}
-
-void session::listen_on(int minPort, int maxPort)
-{
-    libtorrent::error_code ec;
-    session_->listen_on(std::make_pair(minPort, maxPort), ec);
-
-    if (ec)
-    {
-        throw gcnew System::Exception(interop::from_std_string(ec.message()));
-    }
 }
 
 bool session::is_listening()
@@ -189,70 +126,7 @@ void session::remove_torrent(torrent_handle^ handle, int options)
     session_->remove_torrent(*handle->ptr(), options);
 }
 
-session_settings^ session::settings()
-{
-    return gcnew session_settings(session_->settings());
-}
-
-void session::set_proxy(proxy_settings^ settings)
-{
-    session_->set_proxy(*settings->ptr());
-}
-
-void session::set_settings(session_settings^ settings)
-{
-	session_->set_settings(settings->ptr());
-}
-
-void session::set_alert_mask(unsigned int mask)
-{
-    // TODO
-    session_->set_alert_mask(libtorrent::alert::all_categories);
-}
-
-void session::set_alert_dispatch(System::Action<alert^>^ dispatch)
-{
-    dispatcher_->set_callback(dispatch);
-    session_->set_alert_dispatch(std::bind(&session_alert_dispatcher::invoke_callback, *dispatcher_, std::placeholders::_1));
-}
-
-void session::clear_alert_dispatch()
-{
-    typedef boost::function<void(std::auto_ptr<libtorrent::alert>)> dispatch_func_t;
-    session_->set_alert_dispatch(dispatch_func_t());
-}
-
-void session::stop_lsd()
-{
-    session_->stop_lsd();
-}
-
-void session::start_lsd()
-{
-    session_->start_lsd();
-}
-
-void session::stop_upnp()
-{
-    session_->stop_upnp();
-}
-
-void session::start_upnp()
-{
-    session_->start_upnp();
-}
-
 void session::delete_port_mapping(int handle)
 {
     session_->delete_port_mapping(handle);
-}
-
-void session::stop_natpmp()
-{
-    session_->stop_natpmp();
-}
-
-void session::start_natpmp()
-{
-    session_->start_natpmp();
 }

@@ -24,11 +24,6 @@ torrent_status::!torrent_status()
 	delete status_;
 }
 
-System::String^ torrent_status::error::get()
-{
-    return interop::from_std_string(status_->error);
-}
-
 System::String^ torrent_status::save_path::get()
 {
     return interop::from_std_string(status_->save_path);
@@ -44,14 +39,6 @@ System::TimeSpan torrent_status::next_announce::get()
 	typedef std::chrono::duration<float> fsec;
 	typedef std::chrono::seconds s;
 	fsec fs = status_->next_announce;
-    return System::TimeSpan(0, 0, std::chrono::duration_cast<s>(fs).count());
-}
-
-System::TimeSpan torrent_status::announce_interval::get()
-{
-	typedef std::chrono::duration<float> fsec;
-	typedef std::chrono::seconds s;
-	fsec fs = status_->announce_interval;
     return System::TimeSpan(0, 0, std::chrono::duration_cast<s>(fs).count());
 }
 

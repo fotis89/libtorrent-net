@@ -19,12 +19,10 @@ namespace lt
 
         // TODO handle
 
-        property System::String^ error { System::String^ get(); }
         property System::String^ save_path { System::String^ get(); }
         property System::String^ name { System::String^ get(); }
         // TODO torrent file
         property System::TimeSpan next_announce { System::TimeSpan get(); }
-        property System::TimeSpan announce_interval { System::TimeSpan get(); }
         property System::String^ current_tracker { System::String^ get(); }
         property long long total_download { long long get(); }
         property long long total_upload { long long get(); }

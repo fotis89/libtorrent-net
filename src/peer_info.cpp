@@ -48,9 +48,6 @@ long long peer_info::total_upload::get()
     return info_->total_upload;
 }
 
-PEER_INT_PROP(upload_limit);
-PEER_INT_PROP(download_limit);
-
 System::TimeSpan peer_info::last_request::get()
 {
     return System::TimeSpan(0, 0, libtorrent::total_seconds(info_->last_request));
@@ -73,11 +70,6 @@ PEER_INT_PROP(used_send_buffer);
 PEER_INT_PROP(receive_buffer_size);
 PEER_INT_PROP(used_receive_buffer);
 PEER_INT_PROP(num_hashfails);
-
-System::String^ peer_info::country::get()
-{
-    return interop::from_std_string(std::string(info_->country, 2));
-}
 
 PEER_INT_PROP(download_queue_length);
 PEER_INT_PROP(timed_out_requests);

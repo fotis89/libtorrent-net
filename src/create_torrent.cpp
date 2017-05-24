@@ -10,17 +10,17 @@
 using namespace lt;
 
 create_torrent::create_torrent(file_storage^ fs)
-    : create_torrent(fs, 0, -1, libtorrent::create_torrent::optimize, -1)
+    : create_torrent(fs, 0, -1, libtorrent::create_torrent::optimize_alignment, -1)
 {
 }
 
 create_torrent::create_torrent(file_storage^ fs, int piece_size)
-    : create_torrent(fs, piece_size, -1, libtorrent::create_torrent::optimize, -1)
+    : create_torrent(fs, piece_size, -1, libtorrent::create_torrent::optimize_alignment, -1)
 {
 }
 
 create_torrent::create_torrent(file_storage^ fs, int piece_size, int pad_file_limit)
-    : create_torrent(fs, piece_size, pad_file_limit, libtorrent::create_torrent::optimize, -1)
+    : create_torrent(fs, piece_size, pad_file_limit, libtorrent::create_torrent::optimize_alignment, -1)
 {
 }
 

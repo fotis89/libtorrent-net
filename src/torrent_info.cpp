@@ -1,14 +1,15 @@
 #include "torrent_info.h"
+#include "file_storage.h"
 
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/announce_entry.hpp>
+#include <libtorrent/file_storage.hpp>
 
 #include <msclr/marshal_cppstd.h>
 
 #include "announce_entry.h"
 #include "interop.h"
 #include "sha1_hash.h"
-#include "file_entry.h"
 
 using namespace lt;
 
@@ -88,9 +89,10 @@ int torrent_info::num_files()
     return info_->num_files();
 }
 
-file_entry^ torrent_info::file_at(int index)
+System::String^ torrent_info::file_at(int index)
 {
-	return gcnew file_entry(info_->file_at(index));
+	lt::file_storage ^ fs = gcnew lt::file_storage(info_->files());
+	return fs->at(index);
 }
 
 System::String^ torrent_info::ssl_cert()

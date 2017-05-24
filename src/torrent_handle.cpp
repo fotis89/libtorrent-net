@@ -263,16 +263,6 @@ void torrent_handle::queue_position_up()
     handle_->queue_position_up();
 }
 
-void torrent_handle::resolve_countries(bool r)
-{
-    handle_->resolve_countries(r);
-}
-
-bool torrent_handle::resolve_countries()
-{
-    return handle_->resolve_countries();
-}
-
 void torrent_handle::set_ssl_certificate(System::String^ certificate, System::String^ private_key, System::String^ dh_params, System::String^ passphrase)
 {
     handle_->set_ssl_certificate(
@@ -423,13 +413,6 @@ int torrent_handle::max_connections()
 void torrent_handle::set_max_connections(int max_connections)
 {
     handle_->set_max_connections(max_connections);
-}
-
-void torrent_handle::set_tracker_login(System::String^ name, System::String^ password)
-{
-    handle_->set_tracker_login(
-        interop::to_std_string(name),
-        interop::to_std_string(password));
 }
 
 void torrent_handle::move_storage(System::String^ save_path, int flags)
