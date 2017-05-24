@@ -95,35 +95,14 @@ System::String^ torrent_info::file_at(int index)
 	return fs->at(index);
 }
 
-System::String^ torrent_info::ssl_cert()
-{
-    return interop::from_std_string(info_->ssl_cert());
-}
-
 bool torrent_info::is_valid()
 {
     return info_->is_valid();
 }
 
-bool torrent_info::priv()
-{
-    return info_->priv();
-}
-
-bool torrent_info::is_i2p()
-{
-    return info_->is_i2p();
-}
-
 int torrent_info::piece_size(int index)
 {
     return info_->piece_size(index);
-}
-
-System::Nullable<System::DateTime>^ torrent_info::creation_date()
-{
-    // TODO
-    throw gcnew System::NotImplementedException();
 }
 
 System::String^ torrent_info::name()
@@ -144,17 +123,6 @@ System::String^ torrent_info::creator()
 int torrent_info::metadata_size()
 {
     return info_->metadata_size();
-}
-
-cli::array<System::Byte>^ torrent_info::metadata()
-{
-    // TODO
-    throw gcnew System::NotImplementedException();
-}
-
-bool torrent_info::is_merkle_torrent()
-{
-    return info_->is_merkle_torrent();
 }
 
 libtorrent::torrent_info* torrent_info::ptr()

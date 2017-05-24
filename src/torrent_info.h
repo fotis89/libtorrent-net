@@ -30,18 +30,12 @@ namespace lt
         sha1_hash^ info_hash();
         int num_files();
 		System::String^ torrent_info::file_at(int index);
-        System::String^ ssl_cert();
         bool is_valid();
-        bool priv();
-        bool is_i2p();
         int piece_size(int index);
-        System::Nullable<System::DateTime>^ creation_date();
         System::String^ name();
         System::String^ comment();
         System::String^ creator();
         int metadata_size();
-        cli::array<System::Byte>^ metadata();
-        bool is_merkle_torrent();
 
     internal:
         torrent_info(const libtorrent::torrent_info& info);
