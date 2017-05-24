@@ -36,9 +36,6 @@
     <ClInclude Include="entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="peer_info.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,13 +51,7 @@
     <ClInclude Include="file_storage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="create_torrent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="magnet-uri.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="proxy_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="settings_pack.h">
@@ -89,9 +80,6 @@
     <ClCompile Include="entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="peer_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,9 +93,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="file_storage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="create_torrent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="magnet_uri.cpp">

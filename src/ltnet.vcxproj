@@ -146,26 +146,22 @@
   <ItemGroup>
     <ClInclude Include="add_torrent_params.h" />
     <ClInclude Include="announce_entry.h" />
-    <ClInclude Include="create_torrent.h" />
     <ClInclude Include="entry.h" />
     <ClInclude Include="error_code.h" />
     <ClInclude Include="file_storage.h" />
     <ClInclude Include="interop.h" />
     <ClInclude Include="magnet-uri.h" />
     <ClInclude Include="peer_info.h" />
-    <ClInclude Include="proxy_type.h" />
     <ClInclude Include="session.h" />
     <ClInclude Include="settings_pack.h" />
     <ClInclude Include="sha1_hash.h" />
     <ClInclude Include="torrent_handle.h" />
     <ClInclude Include="torrent_info.h" />
     <ClInclude Include="torrent_status.h" />
-    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="add_torrent_params.cpp" />
     <ClCompile Include="announce_entry.cpp" />
-    <ClCompile Include="create_torrent.cpp" />
     <ClCompile Include="entry.cpp" />
     <ClCompile Include="error_code.cpp" />
     <ClCompile Include="file_storage.cpp" />
@@ -178,7 +174,6 @@
     <ClCompile Include="torrent_handle.cpp" />
     <ClCompile Include="torrent_info.cpp" />
     <ClCompile Include="torrent_status.cpp" />
-    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
