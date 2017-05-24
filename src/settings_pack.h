@@ -14,6 +14,7 @@ namespace lt
         libtorrent::settings_pack& ptr();
 
     public:
+		settings_pack();
         ~settings_pack();
 		!settings_pack();
 

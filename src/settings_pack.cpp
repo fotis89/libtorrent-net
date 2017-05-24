@@ -6,6 +6,11 @@
 
 using namespace lt;
 
+settings_pack::settings_pack()
+{
+	settings_ = new libtorrent::settings_pack();
+}
+
 settings_pack::settings_pack(libtorrent::settings_pack& settings)
 {
     settings_ = new libtorrent::settings_pack(settings);
