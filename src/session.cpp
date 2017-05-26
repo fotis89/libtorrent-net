@@ -2,19 +2,18 @@
 
 #include <libtorrent/session.hpp>
 #include <libtorrent/session_status.hpp>
+#include <libtorrent/aux_/session_impl.hpp>
 
 #include "add_torrent_params.h"
 #include "entry.h"
 #include "interop.h"
-#include "sha1_hash.h"
 #include "torrent_handle.h"
-#include "settings_pack.h"
 
 using namespace lt;
 
-session::session(settings_pack ^ settings)
+session::session()
 {
-    session_ = new libtorrent::session(settings->ptr());
+    session_ = new libtorrent::session();
 }
 
 session::~session()
@@ -25,24 +24,6 @@ session::~session()
 session::!session()
 {
 	delete session_;
-}
-
-entry^ session::save_state(unsigned int flags)
-{
-    libtorrent::entry e;
-    session_->save_state(e, flags);
-
-    return gcnew entry(e);
-}
-
-void session::post_torrent_updates()
-{
-    session_->post_torrent_updates();
-}
-
-torrent_handle^ session::find_torrent(sha1_hash^ hash)
-{
-    return gcnew torrent_handle(session_->find_torrent(hash->ptr()));
 }
 
 cli::array<torrent_handle^>^ session::get_torrents()
@@ -91,16 +72,6 @@ bool session::is_paused()
     return session_->is_paused();
 }
 
-bool session::is_dht_running()
-{
-    return session_->is_dht_running();
-}
-
-void session::add_dht_node(System::String^ host, int port)
-{
-    session_->add_dht_node(std::make_pair(interop::to_std_string(host), port));
-}
-
 void session::set_key(int key)
 {
     session_->set_key(key);
@@ -116,17 +87,7 @@ int session::listen_port()
     return session_->listen_port();
 }
 
-int session::ssl_listen_port()
-{
-    return session_->ssl_listen_port();
-}
-
 void session::remove_torrent(torrent_handle^ handle, int options)
 {
     session_->remove_torrent(*handle->ptr(), options);
-}
-
-void session::delete_port_mapping(int handle)
-{
-    session_->delete_port_mapping(handle);
 }

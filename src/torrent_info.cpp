@@ -9,7 +9,6 @@
 
 #include "announce_entry.h"
 #include "interop.h"
-#include "sha1_hash.h"
 
 using namespace lt;
 
@@ -77,11 +76,6 @@ long long torrent_info::total_size()
 int torrent_info::piece_length()
 {
     return info_->piece_length();
-}
-
-sha1_hash^ torrent_info::info_hash()
-{
-    return gcnew sha1_hash(info_->info_hash());
 }
 
 int torrent_info::num_files()

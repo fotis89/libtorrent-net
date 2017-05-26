@@ -153,8 +153,6 @@
     <ClInclude Include="magnet-uri.h" />
     <ClInclude Include="peer_info.h" />
     <ClInclude Include="session.h" />
-    <ClInclude Include="settings_pack.h" />
-    <ClInclude Include="sha1_hash.h" />
     <ClInclude Include="torrent_handle.h" />
     <ClInclude Include="torrent_info.h" />
     <ClInclude Include="torrent_status.h" />
@@ -169,8 +167,6 @@
     <ClCompile Include="magnet_uri.cpp" />
     <ClCompile Include="peer_info.cpp" />
     <ClCompile Include="session.cpp" />
-    <ClCompile Include="settings_pack.cpp" />
-    <ClCompile Include="sha1_hash.cpp" />
     <ClCompile Include="torrent_handle.cpp" />
     <ClCompile Include="torrent_info.cpp" />
     <ClCompile Include="torrent_status.cpp" />

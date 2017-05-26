@@ -8,8 +8,6 @@ namespace libtorrent
 namespace lt
 {
     ref class announce_entry;
-    ref class sha1_hash;
-	ref class file_entry;
 	ref class file_storage;
 
     public ref class torrent_info
@@ -27,7 +25,6 @@ namespace lt
         int num_pieces();
         long long total_size();
         int piece_length();
-        sha1_hash^ info_hash();
         int num_files();
 		System::String^ torrent_info::file_at(int index);
         bool is_valid();

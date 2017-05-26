@@ -9,7 +9,6 @@ namespace lt
 {
     ref class announce_entry;
     ref class peer_info;
-    ref class sha1_hash;
     ref class torrent_info;
     ref class torrent_status;
 
@@ -58,7 +57,6 @@ namespace lt
         int queue_position();
         void queue_position_bottom();
         void queue_position_up();
-        void set_ssl_certificate(System::String^ certificate, System::String^ private_key, System::String^ dh_params, System::String^ passphrase);
         torrent_info^ torrent_file();
         cli::array<int>^ piece_availability();
         int piece_priority(int index);
@@ -83,7 +81,6 @@ namespace lt
         void move_storage(System::String^ save_path, int flags); 
         void rename_file(int index, System::String^ name);
         void super_seeding(bool on);
-        sha1_hash^ info_hash();
 
     private:
         libtorrent::torrent_handle* handle_;
