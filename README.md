@@ -10,7 +10,7 @@ Add BOOST_ROOT (C:\boost_1_64_0), BOOST_BUILD_PATH (C:\boost_1_64_0\tools\build)
 
 2/ Libtorrent
 Download and extract libtorrent-rasterbar to C:\libtorrent-rasterbar-1.1.3
-Compile libtorrent using "bjam link=static variant=release boost-link=static architecture=x86"
+Compile libtorrent using "bjam link=static variant=release boost-link=static architecture=x86 logging=off asserts=off invariant-checks=off deprecated-functions=off"
 
 3/ Ltnet
 Open solution, set Release/x86, build.

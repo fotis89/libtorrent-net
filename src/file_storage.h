@@ -23,12 +23,9 @@ namespace lt
         bool is_valid();
         void reserve(int num_files);
         void add_file(System::String^ p, long long size);
-        void add_file(file_entry^ entry);
         void rename_file(int index, System::String^ new_filename);
-        // TODO map block
-        // TODO map file
         int num_files();
-        file_entry^ at(int index);
+		System::String^ at(int index);
         long long total_size();
         void set_num_pieces(int n);
         int num_pieces();
@@ -41,13 +38,10 @@ namespace lt
         long long file_size(int index);
         System::String^ file_name(int index);
         long long file_offset(int index);
-        // TODO mtime(index);
         bool pad_file_at(int index);
         System::String^ symlink(int index);
         System::String^ file_path(int index, System::String^ save_path);
         int file_flags(int index);
-        void set_file_base(int index, long long offset);
-        long long file_base(int index);
         int file_index_at_offset(long long offset);
 
     private:

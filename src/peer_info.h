@@ -18,19 +18,12 @@ namespace lt
 
         property unsigned int flags { unsigned int get(); }
         property int source { int get(); }
-        // TODO read_state
-        // TODO write_state
-        // TODO ip
         property int up_speed { int get(); }
         property int down_speed { int get(); }
         property int payload_up_speed { int get(); }
         property int payload_down_speed { int get(); }
         property long long total_download { long long get(); }
         property long long total_upload { long long get(); }
-        // TODO pid
-        // TODO pieces
-        property int upload_limit { int get(); }
-        property int download_limit { int get(); }
         property System::TimeSpan last_request { System::TimeSpan get(); }
         property System::TimeSpan last_active { System::TimeSpan get(); }
         property System::TimeSpan download_queue_time { System::TimeSpan get(); }
@@ -41,7 +34,6 @@ namespace lt
         property int receive_buffer_size { int get(); }
         property int used_receive_buffer { int get(); }
         property int num_hashfails { int get(); }
-        property System::String^ country { System::String^ get(); }
         property int download_queue_length { int get(); }
         property int timed_out_requests { int get(); }
         property int busy_requests { int get(); }
@@ -65,7 +57,6 @@ namespace lt
         property int upload_rate_peak { int get(); }
         property int progress_ppm { int get(); }
         property int estimated_reciprocation_rate { int get(); }
-        // TODO local_endpoint
 
     private:
         libtorrent::peer_info* info_;

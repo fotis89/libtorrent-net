@@ -1,14 +1,14 @@
 #include "torrent_info.h"
+#include "file_storage.h"
 
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/announce_entry.hpp>
+#include <libtorrent/file_storage.hpp>
 
 #include <msclr/marshal_cppstd.h>
 
 #include "announce_entry.h"
 #include "interop.h"
-#include "sha1_hash.h"
-#include "file_entry.h"
 
 using namespace lt;
 
@@ -78,24 +78,15 @@ int torrent_info::piece_length()
     return info_->piece_length();
 }
 
-sha1_hash^ torrent_info::info_hash()
-{
-    return gcnew sha1_hash(info_->info_hash());
-}
-
 int torrent_info::num_files()
 {
     return info_->num_files();
 }
 
-file_entry^ torrent_info::file_at(int index)
+System::String^ torrent_info::file_at(int index)
 {
-	return gcnew file_entry(info_->file_at(index));
-}
-
-System::String^ torrent_info::ssl_cert()
-{
-    return interop::from_std_string(info_->ssl_cert());
+	lt::file_storage ^ fs = gcnew lt::file_storage(info_->files());
+	return fs->at(index);
 }
 
 bool torrent_info::is_valid()
@@ -103,25 +94,9 @@ bool torrent_info::is_valid()
     return info_->is_valid();
 }
 
-bool torrent_info::priv()
-{
-    return info_->priv();
-}
-
-bool torrent_info::is_i2p()
-{
-    return info_->is_i2p();
-}
-
 int torrent_info::piece_size(int index)
 {
     return info_->piece_size(index);
-}
-
-System::Nullable<System::DateTime>^ torrent_info::creation_date()
-{
-    // TODO
-    throw gcnew System::NotImplementedException();
 }
 
 System::String^ torrent_info::name()
@@ -142,17 +117,6 @@ System::String^ torrent_info::creator()
 int torrent_info::metadata_size()
 {
     return info_->metadata_size();
-}
-
-cli::array<System::Byte>^ torrent_info::metadata()
-{
-    // TODO
-    throw gcnew System::NotImplementedException();
-}
-
-bool torrent_info::is_merkle_torrent()
-{
-    return info_->is_merkle_torrent();
 }
 
 libtorrent::torrent_info* torrent_info::ptr()

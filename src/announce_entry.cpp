@@ -63,7 +63,7 @@ bool announce_entry::can_announce(System::DateTime now, bool is_seed)
 {
     System::DateTime unix(1970, 1, 1);
     long totalSeconds = (now - unix.ToLocalTime()).TotalSeconds;
-    return entry_->can_announce(std::chrono::high_resolution_clock::now(), is_seed); // TODO: investigate ptime
+    return entry_->can_announce(std::chrono::high_resolution_clock::now(), is_seed);
 }
 
 bool announce_entry::is_working()

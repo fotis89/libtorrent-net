@@ -17,14 +17,9 @@ namespace lt
         ~torrent_status();
 		!torrent_status();
 
-        // TODO handle
-
-        property System::String^ error { System::String^ get(); }
         property System::String^ save_path { System::String^ get(); }
         property System::String^ name { System::String^ get(); }
-        // TODO torrent file
         property System::TimeSpan next_announce { System::TimeSpan get(); }
-        property System::TimeSpan announce_interval { System::TimeSpan get(); }
         property System::String^ current_tracker { System::String^ get(); }
         property long long total_download { long long get(); }
         property long long total_upload { long long get(); }
@@ -32,8 +27,6 @@ namespace lt
         property long long total_payload_upload { long long get(); }
         property long long total_failed_bytes { long long get(); }
         property long long total_reduntant_bytes { long long get(); }
-        // TODO pieces
-        // TODO verified pieces
         property long long total_done { long long get(); }
         property long long total_wanted_done { long long get(); }
         property long long total_wanted { long long get(); }
@@ -42,7 +35,6 @@ namespace lt
         property System::DateTime added_time { System::DateTime get(); }
         property System::DateTime completed_time { System::DateTime get(); }
         property System::DateTime last_seen_complete { System::DateTime get(); }
-        // TODO storage mode
         property float progress { float get(); }
         property int progress_ppm { int get(); }
         property int queue_position { int get(); }
@@ -76,7 +68,6 @@ namespace lt
         property int seed_rank { int get(); }
         property int last_scrape { int get(); }
         property int priority { int get(); }
-        // TODO state
         property bool need_save_resume { bool get(); }
         property bool ip_filter_applies { bool get(); }
         property bool upload_mode { bool get(); }
@@ -91,7 +82,6 @@ namespace lt
         property bool has_incoming { bool get(); }
         property bool seed_mode { bool get(); }
         property bool moving_storage { bool get(); }
-        // TODO info hash
 
     private:
         libtorrent::torrent_status* status_;

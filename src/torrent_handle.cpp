@@ -8,7 +8,6 @@
 #include "announce_entry.h"
 #include "interop.h"
 #include "peer_info.h"
-#include "sha1_hash.h"
 #include "torrent_info.h"
 #include "torrent_status.h"
 
@@ -263,25 +262,6 @@ void torrent_handle::queue_position_up()
     handle_->queue_position_up();
 }
 
-void torrent_handle::resolve_countries(bool r)
-{
-    handle_->resolve_countries(r);
-}
-
-bool torrent_handle::resolve_countries()
-{
-    return handle_->resolve_countries();
-}
-
-void torrent_handle::set_ssl_certificate(System::String^ certificate, System::String^ private_key, System::String^ dh_params, System::String^ passphrase)
-{
-    handle_->set_ssl_certificate(
-        interop::to_std_string(certificate),
-        interop::to_std_string(private_key),
-        interop::to_std_string(dh_params),
-        interop::to_std_string(passphrase));
-}
-
 torrent_info^ torrent_handle::torrent_file()
 {
     if (!handle_->torrent_file())
@@ -425,13 +405,6 @@ void torrent_handle::set_max_connections(int max_connections)
     handle_->set_max_connections(max_connections);
 }
 
-void torrent_handle::set_tracker_login(System::String^ name, System::String^ password)
-{
-    handle_->set_tracker_login(
-        interop::to_std_string(name),
-        interop::to_std_string(password));
-}
-
 void torrent_handle::move_storage(System::String^ save_path, int flags)
 {
     handle_->move_storage(
@@ -449,9 +422,4 @@ void torrent_handle::rename_file(int index, System::String^ name)
 void torrent_handle::super_seeding(bool on)
 {
     handle_->super_seeding(on);
-}
-
-sha1_hash^ torrent_handle::info_hash()
-{
-    return gcnew sha1_hash(handle_->info_hash());
 }

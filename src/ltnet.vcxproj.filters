@@ -27,15 +27,6 @@
     <ClInclude Include="interop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="alert.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="session_alert_dispatcher.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="alert_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="torrent_handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,49 +36,19 @@
     <ClInclude Include="entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lazy_entry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="peer_info.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="announce_entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="session_status.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="session_settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dht_settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sha1_hash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="error_code.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="file_entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="file_storage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="create_torrent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="magnet-uri.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="proxy_settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="proxy_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,16 +62,7 @@
     <ClCompile Include="torrent_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="session_alert_dispatcher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alert.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="interop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alert_types.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="torrent_handle.cpp">
@@ -122,46 +74,19 @@
     <ClCompile Include="entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lazy_entry.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="peer_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="announce_entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="session_status.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="session_settings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dht_settings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="sha1_hash.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="error_code.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="file_entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="file_storage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="create_torrent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="magnet_uri.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="proxy_settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

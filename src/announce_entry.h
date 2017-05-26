@@ -21,7 +21,6 @@ namespace lt
         int next_announce_in();
         int min_announce_in();
         void reset();
-        // TODO failed
         bool can_announce(System::DateTime now, bool is_seed);
         bool is_working();
         void trim();
@@ -29,9 +28,6 @@ namespace lt
         property System::String^ url { System::String^ get(); }
         property System::String^ trackerid { System::String^ get(); }
         property System::String^ message { System::String^ get(); }
-        // TODO last error
-        // TODO property System::DateTime next_announce { System::DateTime get(); }
-        // TODO property System::DateTime min_announce { System::DateTime get(); }
         property int scrape_incomplete { int get(); }
         property int scrape_complete { int get(); }
         property int scrape_downloaded { int get(); }

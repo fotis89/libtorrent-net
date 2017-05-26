@@ -2,7 +2,6 @@
 
 #include <libtorrent/file_storage.hpp>
 
-#include "file_entry.h"
 #include "interop.h"
 
 using namespace lt;
@@ -47,11 +46,6 @@ void file_storage::add_file(System::String^ p, long long size)
     storage_->add_file(interop::to_std_string(p), size);
 }
 
-void file_storage::add_file(file_entry^ entry)
-{
-    storage_->add_file(entry->ptr());
-}
-
 void file_storage::rename_file(int index, System::String^ new_filename)
 {
     storage_->rename_file(index, interop::to_std_string(new_filename));
@@ -62,9 +56,9 @@ int file_storage::num_files()
     return storage_->num_files();
 }
 
-file_entry^ file_storage::at(int index)
+System::String^ file_storage::at(int index)
 {
-    return gcnew file_entry(storage_->at(index));
+    return interop::from_std_string(storage_->file_path(index));
 }
 
 long long file_storage::total_size()
@@ -147,16 +141,6 @@ System::String^ file_storage::file_path(int index, System::String^ save_path)
 int file_storage::file_flags(int index)
 {
     return storage_->file_flags(index);
-}
-
-void file_storage::set_file_base(int index, long long offset)
-{
-    storage_->set_file_base(index, offset);
-}
-
-long long file_storage::file_base(int index)
-{
-    return storage_->file_base(index);
 }
 
 int file_storage::file_index_at_offset(long long offset)
