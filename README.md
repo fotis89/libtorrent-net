@@ -1,3 +1,11 @@
+# NuGet
+Install [libtorrent-net](https://www.nuget.org/packages/libtorrent-net/)
+```Powershell
+PM> Install-Package libtorrent-net
+```
+
+# Building
+
 ```
 **BUILDING LTNET**
 
