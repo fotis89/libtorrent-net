@@ -7,8 +7,6 @@ PM> Install-Package libtorrent-net
 # Building
 
 ```
-**BUILDING LTNET**
-
 Download and install Microsoft Visual Studio 2017 for Windows 10, including SDK 10.1.15063 and C++ tools.
 
 1/ BOOST
