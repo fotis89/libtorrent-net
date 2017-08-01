@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>libtorrent-net</id>
+        <version>2.1.0</version>
+        <title>libtorrent-net</title>
+        <authors>bbougot</authors>
+        <owners>bbougot</owners>
+        <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+        <projectUrl>https://github.com/bbougot/libtorrent-net</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>libtorrent-rasterbar .NET bindings</description>
+        <releaseNotes>libtorrent 1.4.0</releaseNotes>
+        <copyright>Copyright © 2017</copyright>
+        <tags>libtorrent rasterbar .NET bindings torrent</tags>
+    </metadata>
+    <files>
+        <file src="Win32\Release\ltnet.dll" target="lib\net45\ltnet.dll" />
+        <file src="Win32\Release\ltnet.pdb" target="lib\net45\ltnet.pdb" />
+        <file src="vc_150_redist_x86\msvcp140.dll" target="tools\msvcp140.dll" />
+        <file src="vc_150_redist_x86\vccorlib140.dll" target="tools\vccorlib140.dll" />
+        <file src="vc_150_redist_x86\vcruntime140.dll" target="tools\vcruntime140.dll" />
+    </files>
+</package>

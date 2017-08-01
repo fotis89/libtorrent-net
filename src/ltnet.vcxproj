@@ -86,8 +86,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\libtorrent-rasterbar-1.1.3\include;C:\boost_1_64_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\src;C:\boost_1_64_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\libtorrent-libtorrent-1_1_4\include;C:\boost_1_64_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libtorrent-libtorrent-1_1_4\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\src;C:\boost_1_64_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -126,7 +126,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\libtorrent-rasterbar-1.1.3\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc141-mt-1_64.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\libtorrent-libtorrent-1_1_4\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc141-mt-1_64.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
