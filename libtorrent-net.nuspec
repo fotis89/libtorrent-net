@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>libtorrent-net</id>
-        <version>2.1.0</version>
+        <version>2.2.0</version>
         <title>libtorrent-net</title>
         <authors>bbougot</authors>
         <owners>bbougot</owners>
@@ -19,6 +19,7 @@
         <file src="Win32\Release\ltnet.pdb" target="lib\net45\ltnet.pdb" />
         <file src="vc_150_redist_x86\msvcp140.dll" target="tools\msvcp140.dll" />
         <file src="vc_150_redist_x86\vccorlib140.dll" target="tools\vccorlib140.dll" />
+        <file src="vc_150_redist_x86\vcomp140.dll" target="tools\vcomp140.dll" />
         <file src="vc_150_redist_x86\vcruntime140.dll" target="tools\vcruntime140.dll" />
     </files>
 </package>
