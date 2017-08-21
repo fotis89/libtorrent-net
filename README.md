@@ -7,11 +7,11 @@ PM> Install-Package libtorrent-net
 # Building
 
 ```
-Download and install Microsoft Visual Studio 2017 for Windows 10, including SDK 10.1.15063 and C++ tools.
+Download and install Microsoft Visual Studio 2015 and C++ tools.
 
 1/ BOOST
 Download and extract Boost 1.64 to C:\boost_1_64_0
-Go to C:\boost_1_64_0 and execute "bootstrap.bat", then ".\b2 --toolset=msvc-14.1 architecture=x86"
+Go to C:\boost_1_64_0 and execute "bootstrap.bat", then ".\b2 --toolset=msvc-14.0 architecture=x86"
 Add BOOST_ROOT (C:\boost_1_64_0), BOOST_BUILD_PATH (C:\boost_1_64_0\tools\build) to Environment path and C:\boost_1_64_0 to Path
 
 2/ Libtorrent
