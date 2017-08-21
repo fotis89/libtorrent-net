@@ -122,11 +122,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;TORRENT_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0601;__USE_W32_SOCKETS;TORRENT_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\libtorrent-libtorrent-1_1_4\bin\msvc-14.1\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc141-mt-1_64.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\libtorrent-libtorrent-1_1_4\bin\msvc-14.0\release\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\libtorrent.lib;C:\boost_1_64_0\stage\lib\libboost_system-vc140-mt-1_64.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
