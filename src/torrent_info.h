@@ -5,7 +5,7 @@ namespace libtorrent
     class torrent_info;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class announce_entry;
 	ref class file_storage;

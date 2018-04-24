@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <msclr/marshal.h>
 
-using namespace lt;
+using namespace ltnet;
 using System::IntPtr;
 using System::Runtime::InteropServices::Marshal;
 using namespace msclr::interop;

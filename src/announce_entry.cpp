@@ -7,7 +7,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 announce_entry::announce_entry(libtorrent::announce_entry& entry)
 {

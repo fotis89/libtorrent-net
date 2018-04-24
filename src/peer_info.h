@@ -5,7 +5,7 @@ namespace libtorrent
     struct peer_info;
 }
 
-namespace lt
+namespace ltnet
 {
     public ref class peer_info
     {

@@ -5,7 +5,7 @@ namespace libtorrent
     class file_storage;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class file_entry;
 

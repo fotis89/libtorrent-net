@@ -2,7 +2,7 @@
 
 #include <libtorrent/entry.hpp>
 
-using namespace lt;
+using namespace ltnet;
 
 entry::entry(const libtorrent::entry& e)
 {

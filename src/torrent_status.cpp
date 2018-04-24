@@ -7,7 +7,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 torrent_status::torrent_status(libtorrent::torrent_status& status)
 {

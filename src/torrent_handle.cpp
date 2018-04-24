@@ -11,7 +11,7 @@
 #include "torrent_info.h"
 #include "torrent_status.h"
 
-using namespace lt;
+using namespace ltnet;
 
 torrent_handle::torrent_handle(libtorrent::torrent_handle& handle)
 {

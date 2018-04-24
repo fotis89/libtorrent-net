@@ -5,7 +5,7 @@ namespace libtorrent
     class entry;
 }
 
-namespace lt
+namespace ltnet
 {
     public ref class entry
     {

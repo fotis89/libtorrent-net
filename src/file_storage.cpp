@@ -4,7 +4,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 file_storage::file_storage(const libtorrent::file_storage& storage)
 {

@@ -4,7 +4,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 #define PEER_INT_PROP(name) \
     int peer_info::name::get() \

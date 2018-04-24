@@ -5,7 +5,7 @@ namespace libtorrent
     struct announce_entry;
 }
 
-namespace lt
+namespace ltnet
 {
     public ref class announce_entry
     {

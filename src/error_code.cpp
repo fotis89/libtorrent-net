@@ -2,7 +2,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 error_code::error_code(const libtorrent::error_code& ec)
 {

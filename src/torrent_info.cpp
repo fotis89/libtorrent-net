@@ -10,7 +10,7 @@
 #include "announce_entry.h"
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 torrent_info::torrent_info(cli::array<System::Byte>^ buffer)
 {
@@ -85,7 +85,7 @@ int torrent_info::num_files()
 
 System::String^ torrent_info::file_at(int index)
 {
-	lt::file_storage ^ fs = gcnew lt::file_storage(info_->files());
+	ltnet::file_storage ^ fs = gcnew ltnet::file_storage(info_->files());
 	return fs->at(index);
 }
 
@@ -101,17 +101,17 @@ int torrent_info::piece_size(int index)
 
 System::String^ torrent_info::name()
 {
-    return lt::interop::from_std_string(info_->name());
+    return ltnet::interop::from_std_string(info_->name());
 }
 
 System::String^ torrent_info::comment()
 {
-    return lt::interop::from_std_string(info_->comment());
+    return ltnet::interop::from_std_string(info_->comment());
 }
 
 System::String^ torrent_info::creator()
 {
-    return lt::interop::from_std_string(info_->creator());
+    return ltnet::interop::from_std_string(info_->creator());
 }
 
 int torrent_info::metadata_size()

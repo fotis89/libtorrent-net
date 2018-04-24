@@ -6,7 +6,7 @@ namespace libtorrent
     struct add_torrent_params;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class torrent_info;
 

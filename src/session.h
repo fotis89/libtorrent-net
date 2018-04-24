@@ -5,7 +5,7 @@ namespace libtorrent
     class session;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class add_torrent_params;
     ref class entry;

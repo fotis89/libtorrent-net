@@ -6,7 +6,7 @@ namespace libtorrent
     struct torrent_status;
 }
 
-namespace lt
+namespace ltnet
 {
     public ref class torrent_status
     {

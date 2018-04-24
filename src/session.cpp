@@ -9,7 +9,7 @@
 #include "interop.h"
 #include "torrent_handle.h"
 
-using namespace lt;
+using namespace ltnet;
 
 session::session()
 {

@@ -5,7 +5,7 @@
 
 #include <string>
 
-namespace lt
+namespace ltnet
 {
     namespace interop
     {

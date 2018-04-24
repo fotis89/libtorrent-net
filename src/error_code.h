@@ -2,7 +2,7 @@
 
 #include <libtorrent/error_code.hpp>
 
-namespace lt
+namespace ltnet
 {
     public ref class error_code
     {

@@ -13,11 +13,11 @@ namespace libtorrent
 	struct magnet_uri;
 }
 
-namespace lt
+namespace ltnet
 {
 	public ref class magnet_uri
 	{
 	public:
-		void magnet_uri::parse_magnet_uri(System::String^ uri, lt::add_torrent_params^ p, lt::error_code^ ec);
+		void magnet_uri::parse_magnet_uri(System::String^ uri, ltnet::add_torrent_params^ p, ltnet::error_code^ ec);
 	};
 }

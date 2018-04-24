@@ -7,7 +7,7 @@
 #include "interop.h"
 #include "torrent_info.h"
 
-using namespace lt;
+using namespace ltnet;
 
 add_torrent_params::add_torrent_params()
 {

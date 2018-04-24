@@ -5,7 +5,7 @@ namespace libtorrent
     struct torrent_handle;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class announce_entry;
     ref class peer_info;
