@@ -33,6 +33,7 @@ namespace ltnet
         System::String^ comment();
         System::String^ creator();
         int metadata_size();
+		file_storage^ files();
 
     internal:
         torrent_info(const libtorrent::torrent_info& info);

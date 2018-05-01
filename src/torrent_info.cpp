@@ -45,6 +45,12 @@ void torrent_info::rename_file(int index, System::String^ new_filename)
     info_->rename_file(index, interop::to_std_string(new_filename));
 }
 
+file_storage^ torrent_info::files()
+{
+	file_storage^ storage = gcnew file_storage(info_->files());
+	return storage;
+}
+
 cli::array<announce_entry^>^ torrent_info::trackers()
 {
     std::vector<libtorrent::announce_entry> trackers = info_->trackers();
