@@ -207,6 +207,11 @@ float torrent_status::distributed_copies::get()
     return status_->distributed_copies;
 }
 
+int torrent_status::state::get() 
+{
+	return status_->state;
+}
+
 int torrent_status::block_size::get()
 {
     return status_->block_size;
