@@ -95,6 +95,10 @@ System::String^ torrent_info::file_at(int index)
 	return fs->at(index);
 }
 
+System::String^ torrent_info::info_hash() {
+	return ltnet::interop::from_std_string(info_->info_hash().to_string());
+}
+
 bool torrent_info::is_valid()
 {
     return info_->is_valid();

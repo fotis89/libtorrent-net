@@ -81,6 +81,7 @@ namespace ltnet
         void move_storage(System::String^ save_path, int flags); 
         void rename_file(int index, System::String^ name);
         void super_seeding(bool on);
+		System::String^ info_hash();
 
     private:
         libtorrent::torrent_handle* handle_;

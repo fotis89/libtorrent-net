@@ -17,6 +17,8 @@ namespace ltnet
         ~add_torrent_params();
 		!add_torrent_params();
 
+		System::String^ info_hash();
+
         property System::String^ name
         {
             System::String^ get();
@@ -36,7 +38,7 @@ namespace ltnet
         }
 
     internal:
-        libtorrent::add_torrent_params* ptr();
+		libtorrent::add_torrent_params* ptr();
 
     private:
         libtorrent::add_torrent_params* params_;

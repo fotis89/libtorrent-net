@@ -27,6 +27,7 @@ namespace ltnet
         int piece_length();
         int num_files();
 		System::String^ torrent_info::file_at(int index);
+		System::String^ info_hash();
         bool is_valid();
         int piece_size(int index);
         System::String^ name();

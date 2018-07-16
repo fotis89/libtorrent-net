@@ -44,6 +44,11 @@ void add_torrent_params::save_path::set(System::String^ value)
     params_->save_path = interop::to_std_string(value);
 }
 
+System::String^ add_torrent_params::info_hash() 
+{
+	return interop::from_std_string(params_->info_hash.to_string());
+}
+
 torrent_info^ add_torrent_params::ti::get()
 {
     if(params_->ti)
